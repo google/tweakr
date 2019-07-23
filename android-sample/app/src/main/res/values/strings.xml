@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TweakrSample</string>
+    <string name="text_intro">Tweak me!</string>
+</resources>

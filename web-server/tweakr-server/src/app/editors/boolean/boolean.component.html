@@ -1,0 +1,6 @@
+<div class='editor'>
+  <label>
+    <input type="checkbox" #check [ngModel]="tweak.value" name='tweakValue' (ngModelChange)="tweak.onChange($event)" /> 
+    {{getName()}}
+  </label>
+</div>

@@ -1,0 +1,21 @@
+<p *ngIf='!tweaks || tweaks.length == 0'>
+  No Tweaks found. Please annotate a property in your Android app and run the app.
+</p>
+
+<mat-card *ngFor="let tweak of tweaks" class='tweak'>
+  <mat-card-title><span class='tweak-name-part' *ngFor="let part of tweak.id.split(':')"> {{part}} </span></mat-card-title>
+  <mat-card-subtitle>({{tweak.type}})</mat-card-subtitle>
+
+  <mat-card-content>
+    <div [ngSwitch]='tweak.type'>
+        
+        <editors-float *ngSwitchCase="'float'" [tweak]='tweak'></editors-float>
+        <editors-float *ngSwitchCase="'int'" [tweak]='tweak'></editors-float>
+        <editors-enum *ngSwitchCase="'enum'" [tweak]='tweak'></editors-enum>
+        <editors-boolean *ngSwitchCase="'boolean'" [tweak]='tweak'></editors-boolean>
+        <editors-void *ngSwitchCase="'void'" [tweak]='tweak'></editors-void>
+        <editors-color *ngSwitchCase="'color'" [tweak]='tweak'></editors-color>
+        <editors-string *ngSwitchDefault [tweak]='tweak'></editors-string>
+    </div>
+  </mat-card-content>
+</mat-card>

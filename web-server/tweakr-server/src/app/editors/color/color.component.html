@@ -1,0 +1,10 @@
+<div class='editor'>
+    <input type="text"
+      [value]="color"
+      [style.background]="color"
+      [cpOutputFormat]="'rgba'"
+      [cpAlphaChannel]="'always'"
+      [colorPicker]="color"
+      (colorPickerChange)="color=$event;onColorChange($event)" /> 
+</div>
+  

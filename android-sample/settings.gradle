@@ -1,0 +1,4 @@
+include ':app', ':tweakr'
+
+project(':tweakr').projectDir = new File(settingsDir, '../android/tweakr')
+

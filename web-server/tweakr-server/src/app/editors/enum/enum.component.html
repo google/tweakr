@@ -1,0 +1,9 @@
+<div class='editor'>
+  <mat-radio-group class="enum-radio-group" [ngModel]="tweak.value" (ngModelChange)="tweak.onChange($event)">
+      <mat-radio-button class="enum-radio-button"
+          *ngFor="let possibleValue of tweak.possibleValues" [value]="possibleValue">
+          {{possibleValue}}
+      </mat-radio-button>
+    </mat-radio-group>
+</div>
+  

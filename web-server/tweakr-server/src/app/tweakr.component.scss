@@ -1,0 +1,23 @@
+.tweak {
+    margin: 16px;
+}
+
+.tweak .mat-card-title {
+    font-size: 20px;
+}
+
+.tweak-name-part {
+    color: #888;
+}
+
+    .tweak-name-part::after {
+        content: ':';
+    }
+
+    .tweak-name-part:last-of-type {
+        color: #111;
+    }
+
+        .tweak-name-part:last-of-type::after {
+            content: '';
+        }

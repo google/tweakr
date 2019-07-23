@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Tweakr</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<p *ngIf="statusText">{{statusText}}</p>
+
+<app-tweakr *ngIf="isLoggedIn" [tweakrRoot]="tweakrRoot"></app-tweakr>
+
+<router-outlet></router-outlet>
