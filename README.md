@@ -135,7 +135,7 @@ Feature Roadmap / TODO
 - Write some tests, or something ;-P
 
 
-Errata
+Notes
 ======
 
 Note: This is not an officially supported Google product.
