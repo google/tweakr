@@ -17,6 +17,7 @@ package com.google.tweakr.sample;
 import android.app.Application;
 
 import com.google.tweakr.Tweakr;
+import com.google.tweakr.preferences.TweakrPreferencesRepo;
 
 public class SampleApplication extends Application {
 
@@ -26,5 +27,8 @@ public class SampleApplication extends Application {
 
         // Uncomment this to enable email authentication (default is anonymous/no authentication).
         //Tweakr.setRepo(new TweakrFirebaseRepoEmailAuth());
+
+        // Uncomment this to enable local Android preference screen for Tweakr.
+        Tweakr.setRepo(new TweakrPreferencesRepo(this));
     }
 }

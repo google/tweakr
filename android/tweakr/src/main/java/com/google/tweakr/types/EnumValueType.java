@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class EnumValueType<T> implements ValueType {
+    public static final String TYPE_ENUM = "enum";
+
     private final T[] enumConstants;
 
     public EnumValueType(Class<T> clazz) {
@@ -28,7 +30,7 @@ public class EnumValueType<T> implements ValueType {
 
     @Override
     public String getName() {
-        return "enum";
+        return TYPE_ENUM;
     }
 
     @Override

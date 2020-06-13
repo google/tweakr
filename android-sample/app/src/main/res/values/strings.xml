@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TweakrSample</string>
     <string name="text_intro">Tweak me!</string>
+    <string name="title_activity_tweakr_preferences">Tweakr Settings</string>
 </resources>

@@ -16,7 +16,7 @@ package com.google.tweakr.types;
 
 import java.util.Objects;
 
-class PrimitiveValueType implements ValueType {
+public class PrimitiveValueType implements ValueType {
     public static final String TYPE_STRING = "string";
     public static final String TYPE_INT = "int";
     public static final String TYPE_FLOAT = "float";
@@ -56,7 +56,11 @@ class PrimitiveValueType implements ValueType {
         } else if (TYPE_INT.equals(name)) {
             return safelyConvertLongToInt((long) newValue, (int) getDefault());
         } else if (TYPE_FLOAT.equals(name)) {
-            return newValue;
+            if (newValue instanceof Float) {
+                return newValue;
+            } else if (newValue instanceof String) {
+                return Float.valueOf((String)newValue);
+            }
         } else if (TYPE_BOOLEAN.equals(name)) {
             if (newValue instanceof String) {
                 return Boolean.valueOf((String)newValue);

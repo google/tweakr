@@ -14,7 +14,7 @@
 
 package com.google.tweakr;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.tweakr.annotations.Tweak;
 import com.google.tweakr.collections.FieldMap;
