@@ -13,11 +13,12 @@ Tweakr is an Android library that lets you annotate fields and methods in your c
 [Demo video](https://youtu.be/CgeW_q7NgfI)
 
 
-Quickstart Instructions
+Quickstart Instructions (Firebase)
 =======================
 
 First, clone the repo: `git clone https://github.com/google/tweakr.git`.
 
+For Firebase, continue below. To avoid using Firebase and the web UI, and instead use a local PreferenceFragment to adjust parameters, skip to the "Local Preference Repo" section.
 
 Set up Firebase – Android
 -----------------------
@@ -70,6 +71,14 @@ UI / Web Server
 3. Run `npm install`
 4. Run `ng serve --open`
 5. Run the sample Android app. The Tweaks should show up in the web UI instantly and you can alter them and see them change in the app in real-time.
+
+
+Quickstart Instructions (Local Preference Repo)
+=====================
+
+1. You may need to remove references to Firebase classes and the Firebase libraries from the build.gradle files.
+2. Uncomment the indicated line in SampleApplication.java to enable TweakrPreferencesRepo. 
+3. Expose an Activity like the TweakrPrefrencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
 
 
 Using the API
@@ -130,7 +139,6 @@ Feature Roadmap / TODO
 - Support multiple children in @Tweak annotation
 - Support array types
 - Support registering additional ValueTypeConverters
-- Local (non-Firebase) Repo using Android PreferenceFragment / SharedPreferences - to automatically generate a Settings page in your app
 - Binary file ValueType for uploading images/audio remotely and displaying in your app
 - Write some tests, or something ;-P
 
