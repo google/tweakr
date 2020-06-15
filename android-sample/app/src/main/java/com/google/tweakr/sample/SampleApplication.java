@@ -29,6 +29,6 @@ public class SampleApplication extends Application {
         //Tweakr.setRepo(new TweakrFirebaseRepoEmailAuth());
 
         // Uncomment this to enable local Android preference screen for Tweakr.
-        Tweakr.setRepo(new TweakrPreferencesRepo(this));
+        //Tweakr.setRepo(new TweakrPreferencesRepo(this));
     }
 }
