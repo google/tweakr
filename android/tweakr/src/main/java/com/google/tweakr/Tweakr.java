@@ -31,7 +31,7 @@ public class Tweakr {
 
     private static synchronized TweakrRepo getRepo() {
         if (repo == null) {
-            repo = new TweakrFirebaseRepo();
+            throw new IllegalStateException("Must call TweakrRepo.setRepo() before registering.");
         }
         return repo;
     }

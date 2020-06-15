@@ -34,6 +34,7 @@ dependencies {
     //implementation 'androidx.appcompat:appcompat:1.1.0'
 
     implementation project(':tweakr')
+    implementation project(':tweakr-firebase')
     implementation 'com.google.firebase:firebase-core:17.4.3'
     implementation 'com.google.firebase:firebase-database:19.3.0'
     implementation 'com.google.firebase:firebase-auth:19.3.1'

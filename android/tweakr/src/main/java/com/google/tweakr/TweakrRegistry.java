@@ -37,7 +37,7 @@ import static com.google.tweakr.TweakrRepo.FIELD_SEPARATOR;
  * Keeps track of all the Tweaks registered so far and applies changes to each target's Tweaks when
  * they change in the repo.
  */
-class TweakrRegistry implements TweakrFirebaseRepo.OnChangeListener {
+class TweakrRegistry implements TweakrRepo.OnChangeListener {
 
     private static TweakrRegistry singleton;
 

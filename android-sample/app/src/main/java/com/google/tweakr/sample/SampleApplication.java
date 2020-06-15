@@ -17,6 +17,7 @@ package com.google.tweakr.sample;
 import android.app.Application;
 
 import com.google.tweakr.Tweakr;
+import com.google.tweakr.TweakrFirebaseRepo;
 import com.google.tweakr.preferences.TweakrPreferencesRepo;
 
 public class SampleApplication extends Application {
@@ -24,6 +25,9 @@ public class SampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // The default no-auth Firebase Repo. Comment out this line if you want to use one of the other repos below.
+        Tweakr.setRepo(new TweakrFirebaseRepo());
 
         // Uncomment this to enable email authentication (default is anonymous/no authentication).
         //Tweakr.setRepo(new TweakrFirebaseRepoEmailAuth());

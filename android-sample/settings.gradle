@@ -1,4 +1,5 @@
-include ':app', ':tweakr'
+include ':app', ':tweakr', ':tweakr-firebase'
 
 project(':tweakr').projectDir = new File(settingsDir, '../android/tweakr')
+project(':tweakr-firebase').projectDir = new File(settingsDir, '../android/tweakr-firebase')
 
