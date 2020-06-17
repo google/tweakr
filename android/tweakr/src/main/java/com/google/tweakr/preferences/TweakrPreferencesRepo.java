@@ -17,6 +17,8 @@ package com.google.tweakr.preferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import android.util.Log;
+import androidx.annotation.NonNull;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -24,7 +26,6 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.SwitchPreference;
-import timber.log.Timber;
 
 import android.util.ArrayMap;
 import android.util.ArraySet;
@@ -33,8 +34,6 @@ import com.google.tweakr.TweakrRepo;
 import com.google.tweakr.types.EnumValueType;
 import com.google.tweakr.types.PrimitiveValueType;
 import com.google.tweakr.types.ValueType;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +45,7 @@ import java.util.Set;
  * in place of the TweakrFirebaseRepo if you want local control or don't want Firebase/internet.
  */
 public class TweakrPreferencesRepo implements TweakrRepo {
+    private static final String TAG = "TweakrPreferencesRepo";
 
     private static final String METADATA_PREFS_NAME = "__TWEAKR_METADATA_PREFS_NAME__v1";
 
@@ -66,7 +66,7 @@ public class TweakrPreferencesRepo implements TweakrRepo {
             try {
                 listener.onFieldChanged(key, valueTypes.get(key).convert(convertValue(key)));
             } catch (Exception e) {
-                Timber.e(e, "Failed to convert value: perhaps ValueType is not implemented?");
+                Log.e(TAG, "Failed to convert value: perhaps ValueType is not implemented?", e);
             }
         }
     };
@@ -153,15 +153,15 @@ public class TweakrPreferencesRepo implements TweakrRepo {
                 pref.setTitle(name);
 
                 if (!screen.addPreference(pref)) {
-                    Timber.e("Failed to add preference for %s", name);
+                    Log.e(TAG, "Failed to add preference for " + name);
                 }
             } catch (ClassCastException e) {
-                Timber.e(e, "Failed to convert saved value for %s", name);
+                Log.e(TAG, "Failed to convert saved value for " + name, e);
             }
         }
     }
 
-    @NotNull
+    @NonNull
     private Preference createPreference(String name, String valueType, String initialValue, Set<String> possibleValues) throws ClassCastException {
 
         switch (valueType) {

@@ -14,6 +14,7 @@
 
 package com.google.tweakr;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.google.tweakr.annotations.Tweak;
@@ -29,8 +30,6 @@ import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-import timber.log.Timber;
-
 import static com.google.tweakr.TweakrRepo.FIELD_SEPARATOR;
 
 /**
@@ -38,6 +37,8 @@ import static com.google.tweakr.TweakrRepo.FIELD_SEPARATOR;
  * they change in the repo.
  */
 class TweakrRegistry implements TweakrRepo.OnChangeListener {
+
+    private static final String TAG = "TweakrRegistry";
 
     private static TweakrRegistry singleton;
 
@@ -65,7 +66,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
 
     public void register(Object target, String namePrefix) {
         Class clazz = target.getClass();
-        Timber.d("Registering " + clazz);
+        Log.d(TAG, "Registering " + clazz);
 
         // TODO: store targets in a hash of targetId so you can modify individual ones if necessary???
         currentTargetId++;
@@ -93,12 +94,12 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
                                 registerMethod(childTarget, child, buildName(childTarget, child, fieldName), annotation);
                             } catch (NoSuchMethodException ex) {
 
-                                Timber.e(e, "TODO: implement properties! " + childName);
+                                Log.e(TAG, "TODO: implement properties! " + childName, e);
                                 // TODO: property
                             }
                         }
                     } catch (IllegalAccessException|TweakrException e) {
-                        Timber.e(e, "Failed to get child object " + childName);
+                        Log.e(TAG, "Failed to get child object " + childName, e);
                     }
                 } else {
                     registerField(target, field, fieldName, annotation);
@@ -165,7 +166,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
         try {
             curValue = field.get(target);
         } catch (IllegalAccessException e) {
-            Timber.e(e, "Failed to get field's current value");
+            Log.e(TAG, "Failed to get field's current value", e);
             curValue = valueType.getDefault();
         }
         repo.add(name, currentTargetId, valueType, curValue);
@@ -177,7 +178,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
             try {
                 return annotation.valueType().newInstance();
             } catch (IllegalAccessException|InstantiationException e) {
-                Timber.e(e, "Could not create custom ValueType");
+                Log.e(TAG, "Could not create custom ValueType", e);
             }
         }
 
@@ -215,7 +216,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
             try {
                 curValue = getter.invoke(target);
             } catch (ReflectiveOperationException e) {
-                Timber.e(e, "Failed to get property's current value");
+                Log.e(TAG, "Failed to get property's current value", e);
             }
         }
 
@@ -237,7 +238,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
                     try {
                         return targetClass.getMethod(TextUtils.decapitalize(propertyName));
                     } catch (NoSuchMethodException e3) {
-                        Timber.w("Couldn't find getter method for property " + propertyName);
+                        Log.w(TAG, "Couldn't find getter method for property " + propertyName);
                     }
                 }
             }
@@ -254,10 +255,10 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
             } else if (methods.has(name)) {
                 methods.set(name, value);
             } else {
-                Timber.w("Could not find field or method " + name);
+                Log.w(TAG, "Could not find field or method " + name);
             }
         } catch (ReflectiveOperationException|IllegalArgumentException e) {
-            Timber.e(e, "Failed to set field ");
+            Log.e(TAG, "Failed to set field ", e);
         }
     }
 
