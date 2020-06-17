@@ -1,27 +1,40 @@
 Tweakr 
 ======
 
-*A Library for Remote Debugging and Wizard-of-Ozing*
+*A Library for Remote Debugging, Autogenerating Settings/Preference UIs, and Wizard-of-Ozing*
 by [odbol](http://odbol.com) 
 
 Sick of tweaking one value in your animation and having to wait minutes to compile and see your change? Ever want to hand someone a prototype, and let them try it with various options you can adjust on the fly? Do you get tingles when someone mentions "one-line solution"? Then Tweakr might be the right framework for you!
 
-Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements remotely. It uses Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
+Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements locally or remotely. It can use Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. It can also autogenerate a Preferences UI local to the phone. Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
 
 [![](http://img.youtube.com/vi/CgeW_q7NgfI/0.jpg)](http://www.youtube.com/watch?v=CgeW_q7NgfI "Tweakr Demo Video")
 
 [Demo video](https://youtu.be/CgeW_q7NgfI)
 
 
-Quickstart Instructions (Firebase)
-=======================
+Quickstart Instructions (Local Preference Repo)
+=====================
 
 First, clone the repo: `git clone https://github.com/google/tweakr.git`.
 
-For Firebase, continue below. To avoid using Firebase and the web UI, and instead use a local PreferenceFragment to adjust parameters, skip to the "Local Preference Repo" section.
+By default, the Sample app is set up to use the Local Preferences repo. For Firebase support, see the next section.
+
+1. Expose an Activity like the TweakrPrefrencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
+2. You must run the main Activity first before any of the Tweaks will show up in the Preferences UI. After that, they will persist between launches.
+
+
+Quickstart Instructions (Firebase)
+=======================
+
+Import Firebase module
+----------------------
+
+1. Search the Sample app project for `FIREBASE SUPPORT` and uncomment the lines indiciated.
+
 
 Set up Firebase – Android
------------------------
+-------------------------
 
 1. Set up a Firebase project: https://console.firebase.google.com/
 1. In the Firebase console, add a new Android app using your own package name:
@@ -71,14 +84,6 @@ UI / Web Server
 3. Run `npm install`
 4. Run `ng serve --open`
 5. Run the sample Android app. The Tweaks should show up in the web UI instantly and you can alter them and see them change in the app in real-time.
-
-
-Quickstart Instructions (Local Preference Repo)
-=====================
-
-1. You may need to remove references to Firebase classes and the Firebase libraries from the build.gradle files.
-2. Uncomment the indicated line in SampleApplication.java to enable TweakrPreferencesRepo. 
-3. Expose an Activity like the TweakrPrefrencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
 
 
 Using the API

@@ -34,11 +34,14 @@ dependencies {
     //implementation 'androidx.appcompat:appcompat:1.1.0'
 
     implementation project(':tweakr')
-    implementation project(':tweakr-firebase')
-    implementation 'com.google.firebase:firebase-core:17.4.3'
-    implementation 'com.google.firebase:firebase-database:19.3.0'
-    implementation 'com.google.firebase:firebase-auth:19.3.1'
-    implementation 'androidx.preference:preference:1.1.1'
+
+    // FIREBASE SUPPORT: Uncomment below
+//    implementation project(':tweakr-firebase')
+//    implementation 'com.google.firebase:firebase-core:17.4.3'
+//    implementation 'com.google.firebase:firebase-database:19.3.0'
+//    implementation 'com.google.firebase:firebase-auth:19.3.1'
+//    implementation 'androidx.preference:preference:1.1.1'
 }
 
-apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
+// FIREBASE SUPPORT: Uncomment below
+//apply plugin: 'com.google.gms.google-services'  // Google Play services Gradle plugin
