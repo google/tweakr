@@ -15,7 +15,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [{ path: 'tweak', loadChildren: () => import('./tweak/tweak.module').then(m => m.TweakModule) }];
+const routes: Routes = [{ path: 'tweak', loadChildren: () => import('./tweak/tweak.module').then(m => m.TweakModule) }, { path: 'setup', loadChildren: () => import('./setup/setup.module').then(m => m.SetupModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
