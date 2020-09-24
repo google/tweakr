@@ -13,6 +13,9 @@
 // limitations under the License.
 
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+
+import {getFirebaseConfig} from './firebase_config';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +23,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (!getFirebaseConfig(this.route)) {
+      this.router.navigate(['setup']);
+    } else {
+      this.router.navigate(['tweak']);
+    }
   }
 }

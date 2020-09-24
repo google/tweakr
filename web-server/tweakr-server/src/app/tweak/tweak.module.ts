@@ -11,7 +11,7 @@ import { TweakComponent } from './tweak.component';
 import {EditorsModule} from '../editors/editors.module';
 import {TweakrComponent} from '../tweakr.component';
 
-import {environment} from '../../environments/environment';
+import {getFirebaseConfig} from '../firebase_config';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import {environment} from '../../environments/environment';
   imports: [
     CommonModule,
     TweakRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(getFirebaseConfig()),
     AngularFireAuthModule, AngularFireDatabaseModule,
     EditorsModule
   ]
