@@ -15,7 +15,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable, of } from 'rxjs';
-import { flatMap } from 'rxjs/operators';
+import { flatMap, filter } from 'rxjs/operators';
 import { Tweak } from './Tweak';
 
 @Component({
@@ -34,7 +34,7 @@ export class TweakrComponent implements OnInit {
     const tweakr = this.db.object(this.tweakrRoot);
     // TODO: unsubscribe from this on destroy.
     tweakr.valueChanges()
-      .pipe(flatMap((root: {}) =>
+      .pipe(filter(root => !!root), flatMap((root: {}) =>
         of(Object.keys(root).map(key => new Tweak(key, root[key], (value: any) => {
           this.db.object(this.tweakrRoot + '/' + key).update({value});
         })))
