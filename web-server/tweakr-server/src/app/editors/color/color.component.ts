@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Component, OnInit } from '@angular/core';
-import { EditorComponent } from '../editor/editor.component';
+import {Component, OnInit} from '@angular/core';
+import {EditorComponent} from '../editor/editor.component';
 
 function parseColorComponent(component: string): number {
   return Math.min(255, parseInt(component, 10));
@@ -26,23 +26,19 @@ function getColorComponent(androidColor: number, index: number): number {
 }
 
 function androidToRgba(androidColor: number): string {
-  return 'rgba('
-  + getColorComponent(androidColor, 2) + ','
-  + getColorComponent(androidColor, 1) + ','
-  + getColorComponent(androidColor, 0) + ','
-  + (getColorComponent(androidColor, 3) / 255)
-  + ')';
+  return 'rgba(' + getColorComponent(androidColor, 2) + ',' +
+      getColorComponent(androidColor, 1) + ',' +
+      getColorComponent(androidColor, 0) + ',' +
+      (getColorComponent(androidColor, 3) / 255) + ')';
 }
 
 function rgbaToAndroid(rgbaColor: string): number {
   const rgba = rgbaColor.substring(5, rgbaColor.length - 1).split(',');
 
   /* tslint:disable no-bitwise */
-  const hex =
-    Math.round(Number(rgba[3]) * 255) << 24
-    | parseColorComponent(rgba[0]) << 16
-    | parseColorComponent(rgba[1]) << 8
-    | parseColorComponent(rgba[2]) << 0;
+  const hex = Math.round(Number(rgba[3]) * 255) << 24 |
+      parseColorComponent(rgba[0]) << 16 | parseColorComponent(rgba[1]) << 8 |
+      parseColorComponent(rgba[2]) << 0;
   /* tslint:enable */
   return hex;
 }
@@ -63,8 +59,8 @@ export class ColorComponent extends EditorComponent implements OnInit {
     this.color = androidToRgba(this.tweak.value);
   }
 
-  onColorChange() {
+  onColorChange(color) {
+    this.color = color;
     this.tweak.onChange(rgbaToAndroid(this.color));
   }
 }
-

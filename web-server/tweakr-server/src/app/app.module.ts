@@ -12,44 +12,34 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-import { MatButtonModule } from '@angular/material';
-import { MatCardModule } from '@angular/material/card';
+import {NgModule} from '@angular/core';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {FormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TweakrComponent } from './tweakr.component';
+import {environment} from '../environments/environment';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
-import { EditorsModule } from './editors/editors.module';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {EditorsModule} from './editors/editors.module';
+import {TweakrComponent} from './tweakr.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TweakrComponent
-  ],
+  declarations: [AppComponent, TweakrComponent],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    BrowserModule, BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule,
-    AppRoutingModule,
-    EditorsModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatToolbarModule
+    AngularFireAuthModule, AngularFireDatabaseModule, AppRoutingModule,
+    EditorsModule, FormsModule, MatButtonModule, MatCardModule, MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
