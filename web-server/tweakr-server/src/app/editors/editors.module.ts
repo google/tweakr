@@ -20,8 +20,6 @@ import { EditorComponent } from './editor/editor.component';
 import { FormsModule } from '@angular/forms';
 import { EnumComponent } from './enum/enum.component';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { VoidComponent } from './void/void.component';
@@ -33,8 +31,6 @@ import { BooleanComponent } from './boolean/boolean.component';
 @NgModule({
   declarations: [EditorComponent, FloatComponent, StringComponent, EnumComponent, VoidComponent, ColorComponent, BooleanComponent],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     ColorPickerModule,
     CommonModule,
     FormsModule,

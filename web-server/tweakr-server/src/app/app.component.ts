@@ -13,18 +13,6 @@
 // limitations under the License.
 
 import {Component, OnInit} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AngularFireDatabase} from '@angular/fire/database';
-import {auth} from 'firebase/app';
-import {first} from 'rxjs/operators';
-
-// You can use a default user here, or write something more complicated like
-// prompting the user for login at the launch of the app. If you use email
-// authentication, you will need to enable it in the Android app as well.
-const DEFAULT_EMAIL = 'YOUR_EMAIL@DOMAIN.com';
-const DEFAULT_PASSWORD = 'YOUR PASSWORD HERE';
-
-const TWEAKR_ROOT = 'tweakr';
 
 @Component({
   selector: 'app-root',
@@ -32,49 +20,8 @@ const TWEAKR_ROOT = 'tweakr';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  tweakrRoot = TWEAKR_ROOT;
-  isLoggedIn = false;
-  statusText: string|undefined;
+  constructor() { }
 
-  constructor(
-      private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
-
-  ngOnInit() {
-    // TODO: add tabs to load different tweakr roots
-    this.checkLoginStatus();
-  }
-
-  checkLoginStatus() {
-    this.statusText = 'Logging in...';
-    this.db.object(this.tweakrRoot)
-        .valueChanges()
-        .pipe(first())
-        .subscribe(
-            () => {
-              this.isLoggedIn = true;
-              this.statusText = undefined;
-            },
-            (error: {}) => {
-              console.log('Error', error);
-              this.isLoggedIn = false;
-              this.login();
-            });
-  }
-
-  async login() {
-    try {
-      const user = await this.afAuth.signInWithEmailAndPassword(
-          DEFAULT_EMAIL, DEFAULT_PASSWORD);
-      this.isLoggedIn = (user != null);
-      this.statusText = undefined;
-    } catch (e) {
-      this.isLoggedIn = false;
-      this.statusText = `Error logging in: ${e}`;
-      console.error('Error logging in', e);
-    }
-  }
-
-  logout() {
-    this.afAuth.signOut();
+  ngOnInit(): void {
   }
 }

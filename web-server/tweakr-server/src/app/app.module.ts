@@ -13,9 +13,6 @@
 // limitations under the License.
 
 import {NgModule} from '@angular/core';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -23,20 +20,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {environment} from '../environments/environment';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {EditorsModule} from './editors/editors.module';
-import {TweakrComponent} from './tweakr.component';
 
 @NgModule({
-  declarations: [AppComponent, TweakrComponent],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule, BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule, AngularFireDatabaseModule, AppRoutingModule,
-    EditorsModule, FormsModule, MatButtonModule, MatCardModule, MatToolbarModule
+    BrowserModule, BrowserAnimationsModule, AppRoutingModule,
+    FormsModule, MatButtonModule, MatCardModule, MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
