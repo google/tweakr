@@ -1,8 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from "@angular/common";
 import {Router} from '@angular/router';
 
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroupDirective, NgForm, Validators, ValidatorFn} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+
+/**
+ * Parses the first object from the given Javascript-like code. This is more
+ * lenient than JSON.parse().
+ */
+function parseJsObject(js: string) {
+  try {
+    const start = js.indexOf('{');
+    const end = js.lastIndexOf('}');
+    const objJs = js.substring(start, end + 1);
+
+    return (new Function(`return ${objJs};`))();
+  } catch (e) {
+    return null;
+  }
+}
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class JsonErrorStateMatcher implements ErrorStateMatcher {
@@ -12,6 +30,13 @@ export class JsonErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
+function JsonValidator(): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} | null => {
+    const isValid = parseJsObject(control.value);
+    return isValid ? null : {json: true} ;
+  };
+}
+
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',
@@ -19,19 +44,25 @@ export class JsonErrorStateMatcher implements ErrorStateMatcher {
 })
 export class SetupComponent implements OnInit {
   formControl = new FormControl('', [
-    Validators.required
+    Validators.required,
+    JsonValidator()
   ]);
 
   matcher = new JsonErrorStateMatcher();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
   }
 
   onClicked() {
-    const configParam = encodeURIComponent(this.formControl.value);
     //this.router.navigate(['tweak'], { queryParams: { config: configParam } });
-    window.location.href = '/tweak?firebase=' + configParam;
+    window.location.href = this.parseLink();
+  }
+
+  parseLink() {
+    // TODO: add quotes to field names.
+    const configParam = encodeURIComponent(JSON.stringify(parseJsObject(this.formControl.value)));
+    return this.location.prepareExternalUrl('/tweak?firebase=' + configParam);
   }
 }
