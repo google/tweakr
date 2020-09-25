@@ -1,1 +1,37 @@
-<p>setup works!</p>
+<mat-card class='setup'>
+  <mat-card-title>Set up Firebase</mat-card-title>
+  <mat-card-subtitle>Paste in your Firebase config to connect Tweakr to your database.</mat-card-subtitle>
+
+  <mat-card-content>
+
+    <form>
+      <mat-form-field>
+        <mat-label>Firebase Config</mat-label>
+        <textarea matInput [formControl]="formControl" [errorStateMatcher]="matcher" cols="100" rows="10" spellcheck="false">
+{
+  apiKey: 'YOUR_INFO_HERE',
+  authDomain: 'YOUR_INFO_HERE',
+  databaseURL: 'YOUR_INFO_HERE',
+  projectId: 'YOUR_INFO_HERE',
+  storageBucket: 'YOUR_INFO_HERE',
+  messagingSenderId: 'YOUR_INFO_HERE'
+}
+        </textarea>
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="formControl.hasError('email') && !formControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="formControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onClicked()" [disabled]="formControl.invalid">
+      Let's get Tweakin'!
+    </button>
+  </mat-card-actions>
+</mat-card>

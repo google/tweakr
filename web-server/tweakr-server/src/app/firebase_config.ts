@@ -7,12 +7,19 @@ function getParam(paramKey: string): string {
   if (keyMatches) {
     return decodeURIComponent(keyMatches[1]);
   }
+
+  return null;
 }
 
 export function getFirebaseConfig(route?: ActivatedRoute): any {
-  const config = route ? route.snapshot.paramMap.get('firebase') : getParam('firebase');
+  const config = getParam('firebase');
   if (config) {
-    return config;
+    try {
+      return JSON.parse(config);
+    } catch (e) {
+      console.error('Failed to parse Firebase config', e);
+      return null;
+    }
   }
 
   if (environment.firebase && environment.firebase.apiKey != 'YOUR_INFO_HERE') {
