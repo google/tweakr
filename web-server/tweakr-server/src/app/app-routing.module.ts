@@ -21,6 +21,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // Note there are two good reasons for using HashLocationStrategy here:
+  //   1. So the easyserver works on Github pages.
+  //   2. The location hash is never sent to the server, so it can't log your API keys.
   imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })

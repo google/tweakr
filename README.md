@@ -1,8 +1,8 @@
-Tweakr 
+Tweakr
 ======
 
 *A Library for Remote Debugging, Autogenerating Settings/Preference UIs, and Wizard-of-Ozing*
-by [odbol](http://odbol.com) 
+by [odbol](http://odbol.com)
 
 Sick of tweaking one value in your animation and having to wait minutes to compile and see your change? Ever want to hand someone a prototype, and let them try it with various options you can adjust on the fly? Do you get tingles when someone mentions "one-line solution"? Then Tweakr might be the right framework for you!
 
@@ -30,7 +30,7 @@ Quickstart Instructions (Firebase)
 Import Firebase module
 ----------------------
 
-1. Search the Sample app project for `FIREBASE SUPPORT` and uncomment the lines indiciated.
+1. Search the Sample app project for `FIREBASE SUPPORT` and uncomment the lines indicated.
 
 
 Set up Firebase – Android
@@ -56,15 +56,6 @@ Set up Firebase – Android
 }
 ````
 
-
-Set up Firebase – Web
--------------------
-
-1. In the Firebase console, Click "Project Overview" and add a new Web app.
-2. It will provide you with some Javascript code. Copy only the object which contains your API values (after `var firebaseConfig = `).
-3. Open `web-server/tweakr-server/src/environments/environment.ts` and replace the placeholder values with the object from step 2.
-
-
 Android App
 -----------
 
@@ -73,6 +64,28 @@ Android App
 3. Run the app.
 4. (Optional): you may increase the security of your app by [enabling authentication](#enabling-authentication).
 
+
+Quickstart Web - Easyserver
+---------------------------
+
+The easiest way to start tweaking values in your app is to use our pre-hosted web UI. If you'd rather set up your own server, skip the next section.
+
+Note: If you are enabling authentication to increase the security of your app, this method is not recommended.
+
+1. Go to https://google.github.io/tweakr/easyserver/ and follow the instructions.
+
+
+Custom Server Setup
+===================
+
+These instructions are for hosting your own web server UI. For quick-n-dirty prototyping situations, use the Easyserver instead (see previous section).
+
+Set up Firebase – Web
+-------------------
+
+1. In the Firebase console, Click "Project Overview" and add a new Web app.
+2. It will provide you with some Javascript code. Copy only the object which contains your API values (after `var firebaseConfig = `).
+3. Open `web-server/tweakr-server/src/environments/environment.ts` and replace the placeholder values with the object from step 2.
 
 
 UI / Web Server
@@ -104,7 +117,7 @@ Tweakr's API is (hopefully) simple:
 Enabling Authentication
 =======================
 
-The default implementation is insecure and allows anyone to alter values in your Tweakr database. You can secure it by using authentication. 
+The default implementation is insecure and allows anyone to alter values in your Tweakr database. You can secure it by using authentication.
 The sample includes code demonstrating how to enable email authentication, but you could also use OAuth or other methods if you like.
 
 
