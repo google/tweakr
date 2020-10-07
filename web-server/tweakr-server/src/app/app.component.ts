@@ -13,7 +13,9 @@
 // limitations under the License.
 
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router, NavigationStart} from '@angular/router';
+
+import {filter} from 'rxjs/operators';
 
 import {getFirebaseConfig} from './firebase_config';
 
@@ -26,10 +28,18 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if (!getFirebaseConfig(this.route)) {
-      this.router.navigate(['setup']);
-    } else {
-      this.router.navigate(['tweak']);
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationStart))
+      .subscribe(ev => this.onNavigationStart(ev));
+  }
+
+  onNavigationStart(event) {
+    if (event.url == '/') {
+      if (!getFirebaseConfig(this.route)) {
+        this.router.navigate(['setup']);
+      } else {
+        this.router.navigate(['tweak']);
+      }
     }
   }
 }

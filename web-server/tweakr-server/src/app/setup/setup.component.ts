@@ -61,7 +61,6 @@ export class SetupComponent implements OnInit {
   }
 
   parseLink() {
-    // TODO: add quotes to field names.
     const configParam = encodeURIComponent(JSON.stringify(parseJsObject(this.formControl.value)));
     return this.location.prepareExternalUrl('/tweak?firebase=' + configParam);
   }
