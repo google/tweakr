@@ -5,17 +5,11 @@
   <mat-card-content>
 
     <form>
-      <mat-form-field>
+      <mat-form-field floatLabel="always">
         <mat-label>Firebase Config</mat-label>
-        <textarea matInput [formControl]="formControl" [errorStateMatcher]="matcher" cols="100" rows="10" spellcheck="false">
-{
-  apiKey: 'YOUR_INFO_HERE',
-  authDomain: 'YOUR_INFO_HERE',
-  databaseURL: 'YOUR_INFO_HERE',
-  projectId: 'YOUR_INFO_HERE',
-  storageBucket: 'YOUR_INFO_HERE',
-  messagingSenderId: 'YOUR_INFO_HERE'
-}
+        <textarea matInput [formControl]="formControl" [errorStateMatcher]="matcher" cols="100" rows="10"
+          spellcheck="false" [placeholder]="placeholderJs">
+
         </textarea>
         <mat-hint>Your API Keys will not be stored</mat-hint>
         <mat-error *ngIf="formControl.hasError('json') && !formControl.hasError('required')">

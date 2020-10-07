@@ -50,6 +50,15 @@ export class SetupComponent implements OnInit {
 
   matcher = new JsonErrorStateMatcher();
 
+  placeholderJs = `{
+    apiKey: 'YOUR_INFO_HERE',
+    authDomain: 'YOUR_INFO_HERE',
+    databaseURL: 'YOUR_INFO_HERE',
+    projectId: 'YOUR_INFO_HERE',
+    storageBucket: 'YOUR_INFO_HERE',
+    messagingSenderId: 'YOUR_INFO_HERE'
+  }`;
+
   constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
