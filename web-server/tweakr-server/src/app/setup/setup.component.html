@@ -25,7 +25,10 @@
 
   <mat-card-actions>
     <div *ngIf="!formControl.invalid">
-      Your login link: <a [href]="parseLink()">{{parseLink()}}</a>
+      <p class="mat-body-strong">Your login link (copy for later):</p>
+      <div class="linkHolder mat-caption">
+        <a [href]="parseLink()">{{parseLink()}}</a>
+      </div>
     </div>
     <button mat-raised-button color="primary" (click)="onClicked()" [disabled]="formControl.invalid">
       Let's get Tweakin'!

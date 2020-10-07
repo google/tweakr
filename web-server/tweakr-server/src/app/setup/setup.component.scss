@@ -1,3 +1,17 @@
 mat-form-field {
   width: 30em;
 }
+
+.linkHolder {
+  max-width: 90vw;
+  overflow-x: auto;
+  padding: 8px;
+  background: #eee;
+  margin: 16px 0;
+}
+
+.linkHolder a {
+  display: block;
+  word-wrap: no-wrap;
+  white-space: nowrap;
+}
