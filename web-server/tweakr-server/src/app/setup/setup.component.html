@@ -3,6 +3,20 @@
   <mat-card-subtitle>Paste in your Firebase config to connect Tweakr to your database.</mat-card-subtitle>
 
   <mat-card-content>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Detailed setup instructions
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ol>
+        <li>In the Firebase console, Click "Project Overview" and add a new Web app.</li>
+        <li>Set the Authorized Domain of the Web App to <code>google.github.io</code>.</li>
+        <li>It will provide you with some Javascript code. Copy the object which contains your API values (after <code>var firebaseConfig = </code>).</li>
+        <li>Paste that code below.</li>
+        <li>It will generate a login link for you, which you can save or share so anyone can control your prototype.</li>
+      </ol>
+    </mat-expansion-panel>
 
     <form>
       <mat-form-field floatLabel="always">
