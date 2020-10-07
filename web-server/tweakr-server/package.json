@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "github": "ng build --base-href='https://google.github.io/tweakr/easyserver/' --outputPath=../../easyserver/"
+    "github": "ng build --base-href='https://google.github.io/tweakr/easyserver/' --deployUrl='https://google.github.io/tweakr/easyserver/' --outputPath=../../easyserver/"
   },
   "private": true,
   "dependencies": {
