@@ -8,6 +8,11 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { TweakRoutingModule } from './tweak-routing.module';
 import { TweakComponent } from './tweak.component';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRadioModule} from '@angular/material/radio';
+
 import {EditorsModule} from '../editors/editors.module';
 import {TweakrComponent} from '../tweakr.component';
 
@@ -21,7 +26,9 @@ import {getFirebaseConfig} from '../firebase_config';
     TweakRoutingModule,
     AngularFireModule.initializeApp(getFirebaseConfig()),
     AngularFireAuthModule, AngularFireDatabaseModule,
-    EditorsModule
+    EditorsModule,
+    MatButtonModule, MatCardModule, MatToolbarModule,
+    MatRadioModule
   ]
 })
 export class TweakModule { }
