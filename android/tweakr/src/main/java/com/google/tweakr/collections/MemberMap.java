@@ -52,6 +52,7 @@ public abstract class MemberMap<K, V extends Member> {
             map.put(key, memberHolder);
         }
 
+        // TODO: check if target is already in the list, avoid duplicating.
         memberHolder.add(new MemberHolder(target, member));
     }
 
