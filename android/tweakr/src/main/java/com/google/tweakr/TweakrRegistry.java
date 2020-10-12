@@ -65,7 +65,12 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
     }
 
     public void register(Object target, String namePrefix) {
-        Class clazz = target.getClass();
+        Class<?> clazz = target.getClass();
+
+        register(target, clazz, namePrefix);
+    }
+
+    public <T> void register(T target, Class<? extends T> clazz,  String namePrefix) {
         Log.d(TAG, "Registering " + clazz);
 
         // TODO: store targets in a hash of targetId so you can modify individual ones if necessary???

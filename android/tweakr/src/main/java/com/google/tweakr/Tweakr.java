@@ -75,6 +75,25 @@ public class Tweakr {
     }
 
     /**
+     * Registers all members of target that are annotated with
+     * {@link com.google.tweakr.annotations.Tweak}.
+     *
+     * Any annotated fields with children must be non-null at the time of registration.
+     *
+     * @param target the object containing members to register.
+     * @param clazz the type of object to gather fields from. Use this in superclasses, since Tweakr
+     *              will only gather the declared fields of the given class, not inherited fields.
+     * @param namePrefix An optional prefix for each Tweak. Use this if you want to differentiate
+     *                   multiple objects in the UI: instead of changing a value and changing all
+     *                   objects that share that member, you can add a unique namePrefix for each
+     *                   object (or group of objects) so that the changes only affect a subset of
+     *                   the targets.
+     */
+    public <T> void register(T target, Class<? extends T> clazz,  String namePrefix) {
+        TweakrRegistry.get(getRepo()).register(target, clazz, namePrefix);
+    }
+
+    /**
      * {@see TweakrRepo#addListener}
      */
     public static void addListener(TweakrRepo.OnChangeListener listener) {
