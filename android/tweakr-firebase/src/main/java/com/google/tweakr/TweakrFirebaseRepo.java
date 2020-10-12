@@ -111,33 +111,43 @@ public class TweakrFirebaseRepo implements TweakrRepo {
                     doc.child("possibleValues").setValue(possibleValues);
                 }
 
-                if (!snapshotListeners.containsKey(name)) {
-                    ValueEventListener valueListener = new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            Object newValue = snapshot.getValue();
-                            Log.d(TAG, "Current data: " + newValue);
-                            // TODO: allow nulls? will need to convert with ValueType
-                            if (newValue != null) {
-                                for (OnChangeListener listener : listeners) {
-                                    listener.onFieldChanged(name, valueType.convert(newValue));
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Log.w(TAG, "Value listener cancelled.", databaseError.toException());
-                        }
-                    };
-                    doc.child("value").addValueEventListener(valueListener);
-
-                    snapshotListeners.put(name, valueListener);
-                }
+                DatabaseReference valueRef = doc.child("value");
+                addValueListener(name, valueRef, valueType);
             })
             .exceptionally((e) -> {
                 Log.e(TAG, "Failed to add target ", e);
                 return null;
             });
+    }
+
+    private void addValueListener(String name, DatabaseReference valueRef, ValueType valueType) {
+        // Always remove the old listener so we get a fresh value in case the object was
+        // recreated/reregistered but the listener survived it.
+        ValueEventListener oldListener = snapshotListeners.remove(name);
+        if (oldListener != null) {
+            valueRef.removeEventListener(oldListener);
+        }
+
+        ValueEventListener valueListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Object newValue = snapshot.getValue();
+                Log.d(TAG, "Current data: " + newValue);
+                // TODO: allow nulls? will need to convert with ValueType
+                if (newValue != null) {
+                    for (OnChangeListener listener : listeners) {
+                        listener.onFieldChanged(name, valueType.convert(newValue));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.w(TAG, "Value listener cancelled.", databaseError.toException());
+            }
+        };
+        valueRef.addValueEventListener(valueListener);
+
+        snapshotListeners.put(name, valueListener);
     }
 }
