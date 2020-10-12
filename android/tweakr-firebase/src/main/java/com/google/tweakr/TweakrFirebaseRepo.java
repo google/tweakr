@@ -17,8 +17,6 @@ package com.google.tweakr;
 import androidx.annotation.NonNull;
 import android.util.Log;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -65,7 +63,7 @@ public class TweakrFirebaseRepo implements TweakrRepo {
      *         queued up will be added immediately.
      */
     @NonNull
-    protected CompletableFuture<FirebaseUser> authenticate() {
+    protected CompletableFuture<Boolean> authenticate() {
         return CompletableFuture.completedFuture(null);
     }
 
