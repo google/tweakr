@@ -70,15 +70,15 @@ Web - Easyserver
 
 The easiest way to start tweaking values in your app is to use our pre-hosted web UI. If you'd rather set up your own server, skip the next section.
 
-_Note: If you are enabling authentication to increase the security of your app, this method is not recommended._
+_Note: If you are using authentication to increase the security of your app, this method is not recommended._
 
-1. Go to https://google.github.io/tweakr/easyserver/ and follow the instructions to allow the Easyserver to access your Firebase.
+1. Go to [https://google.github.io/tweakr/easyserver/](https://google.github.io/tweakr/easyserver/)  and follow the instructions to allow the Easyserver to access your Firebase.
 
 
 Custom Server Setup
 ===================
 
-These instructions are for hosting your own web server UI. For quick-n-dirty prototyping situations, use the (Easyserver)[https://google.github.io/tweakr/easyserver/] instead (see previous section).
+These instructions are for hosting your own web server UI. For quick-n-dirty prototyping situations, use the [Easyserver](https://google.github.io/tweakr/easyserver/) instead (see previous section).
 
 Set up Firebase – Web
 -------------------
