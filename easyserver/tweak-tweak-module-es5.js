@@ -25306,37 +25306,43 @@
       /* harmony import */
 
 
-      var _editors_float_float_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _editors_float_float_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./editors/float/float.component */
       "oRbG");
       /* harmony import */
 
 
-      var _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./editors/enum/enum.component */
       "pjps");
       /* harmony import */
 
 
-      var _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./editors/boolean/boolean.component */
       "/ayl");
       /* harmony import */
 
 
-      var _editors_void_void_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _editors_void_void_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./editors/void/void.component */
       "xoEW");
       /* harmony import */
 
 
-      var _editors_color_color_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _editors_color_color_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./editors/color/color.component */
       "I85h");
       /* harmony import */
 
 
-      var _editors_string_string_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _editors_string_string_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./editors/string/string.component */
       "MjS4"); // Copyright 2019 Google LLC
       //
@@ -25650,7 +25656,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.tweaks);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchDefault"], _editors_float_float_component__WEBPACK_IMPORTED_MODULE_6__["FloatComponent"], _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_7__["EnumComponent"], _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_8__["BooleanComponent"], _editors_void_void_component__WEBPACK_IMPORTED_MODULE_9__["VoidComponent"], _editors_color_color_component__WEBPACK_IMPORTED_MODULE_10__["ColorComponent"], _editors_string_string_component__WEBPACK_IMPORTED_MODULE_11__["StringComponent"]],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchDefault"], _editors_float_float_component__WEBPACK_IMPORTED_MODULE_7__["FloatComponent"], _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_8__["EnumComponent"], _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_9__["BooleanComponent"], _editors_void_void_component__WEBPACK_IMPORTED_MODULE_10__["VoidComponent"], _editors_color_color_component__WEBPACK_IMPORTED_MODULE_11__["ColorComponent"], _editors_string_string_component__WEBPACK_IMPORTED_MODULE_12__["StringComponent"]],
         styles: [".tweak[_ngcontent-%COMP%] {\n  margin: 16px;\n}\n\n.tweak[_ngcontent-%COMP%]   .mat-card-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n\n.tweak-name-part[_ngcontent-%COMP%] {\n  color: #888;\n}\n\n.tweak-name-part[_ngcontent-%COMP%]::after {\n  content: \":\";\n}\n\n.tweak-name-part[_ngcontent-%COMP%]:last-of-type {\n  color: #111;\n}\n\n.tweak-name-part[_ngcontent-%COMP%]:last-of-type::after {\n  content: \"\";\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdHdlYWtyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtBQUNKOztBQUVBO0VBQ0ksZUFBQTtBQUNKOztBQUVBO0VBQ0ksV0FBQTtBQUNKOztBQUVJO0VBQ0ksWUFBQTtBQUNSOztBQUVJO0VBQ0ksV0FBQTtBQUNSOztBQUVRO0VBQ0ksV0FBQTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvdHdlYWtyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnR3ZWFrIHtcbiAgICBtYXJnaW46IDE2cHg7XG59XG5cbi50d2VhayAubWF0LWNhcmQtdGl0bGUge1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbn1cblxuLnR3ZWFrLW5hbWUtcGFydCB7XG4gICAgY29sb3I6ICM4ODg7XG59XG5cbiAgICAudHdlYWstbmFtZS1wYXJ0OjphZnRlciB7XG4gICAgICAgIGNvbnRlbnQ6ICc6JztcbiAgICB9XG5cbiAgICAudHdlYWstbmFtZS1wYXJ0Omxhc3Qtb2YtdHlwZSB7XG4gICAgICAgIGNvbG9yOiAjMTExO1xuICAgIH1cblxuICAgICAgICAudHdlYWstbmFtZS1wYXJ0Omxhc3Qtb2YtdHlwZTo6YWZ0ZXIge1xuICAgICAgICAgICAgY29udGVudDogJyc7XG4gICAgICAgIH0iXX0= */"]
       });
       /*@__PURE__*/
@@ -25741,19 +25747,43 @@
       /* harmony import */
 
 
-      var _editors_editors_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/toolbar */
+      "/t3+");
+      /* harmony import */
+
+
+      var _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      /*! @angular/material/radio */
+      "QibW");
+      /* harmony import */
+
+
+      var _editors_editors_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ../editors/editors.module */
       "41K8");
       /* harmony import */
 
 
-      var _tweakr_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _tweakr_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ../tweakr.component */
       "e/Tk");
       /* harmony import */
 
 
-      var _firebase_config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _firebase_config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ../firebase_config */
       "Q7UT");
 
@@ -25768,13 +25798,13 @@
         factory: function TweakModule_Factory(t) {
           return new (t || TweakModule)();
         },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_9__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_7__["EditorsModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_13__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_11__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__["MatRadioModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](TweakModule, {
-          declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_8__["TweakrComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_7__["EditorsModule"]]
+          declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_12__["TweakrComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_11__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__["MatRadioModule"]]
         });
       })();
       /*@__PURE__*/
@@ -25784,8 +25814,8 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TweakModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
-            declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_8__["TweakrComponent"]],
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_9__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_7__["EditorsModule"]]
+            declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_12__["TweakrComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_13__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_11__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_8__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_10__["MatRadioModule"]]
           }]
         }], null, null);
       })();
