@@ -77,11 +77,11 @@ export class Tweak {
     if (this.type === 'float' || this.type === 'int') {
       this.value = +newValue;
 
-      if (this.value > this.max) {
+      if (this.value > this.max || this.isProbablyNormalized(this.value)) {
         this.calculateMax(this.value);
       }
 
-      if (this.value < this.min) {
+      if (this.value < this.min || this.isProbablyNormalized(this.value)) {
         this.calculateMin(this.value);
       }
     } else {
@@ -96,6 +96,7 @@ export class Tweak {
   }
 
   private isProbablyNormalized(currentValue) {
-    return currentValue < 1 && currentValue > 0;
+    return this.type === 'float' && currentValue <= 1 && currentValue >= 0
+      && this.initialValue <= 1 && this.initialValue >= 0;
   }
 }
