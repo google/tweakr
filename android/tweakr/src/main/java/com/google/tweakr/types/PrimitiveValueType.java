@@ -57,7 +57,7 @@ public class PrimitiveValueType implements ValueType {
             return safelyConvertLongToInt((long) newValue, (int) getDefault());
         } else if (TYPE_FLOAT.equals(name)) {
             if (newValue instanceof Float || newValue instanceof Double) {
-                return newValue;
+                return ((Number) newValue).floatValue();
             } else if (newValue instanceof String) {
                 return Float.valueOf((String)newValue);
             }
