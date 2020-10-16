@@ -91,6 +91,10 @@ export class Tweak {
     this.onChangeListener(this.value);
   }
 
+  resetToInitialValue() {
+    this.onChange(this.initialValue);
+  }
+
   private isProbablyNormalized(currentValue) {
     return currentValue < 1 && currentValue > 0;
   }

@@ -8,7 +8,7 @@
 
   <mat-card-content>
     <div [ngSwitch]='tweak.type'>
-        
+
         <editors-float *ngSwitchCase="'float'" [tweak]='tweak'></editors-float>
         <editors-float *ngSwitchCase="'int'" [tweak]='tweak'></editors-float>
         <editors-enum *ngSwitchCase="'enum'" [tweak]='tweak'></editors-enum>
@@ -18,4 +18,10 @@
         <editors-string *ngSwitchDefault [tweak]='tweak'></editors-string>
     </div>
   </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="tweak.resetToInitialValue()">
+      Reset to Default
+    </button>
+  </mat-card-actions>
 </mat-card>
