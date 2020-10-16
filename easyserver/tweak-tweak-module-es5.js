@@ -310,610 +310,6 @@
     },
 
     /***/
-    "30Go":
-    /*!********************************************************************!*\
-      !*** ./node_modules/@firebase/app/node_modules/tslib/tslib.es6.js ***!
-      \********************************************************************/
-
-    /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
-
-    /***/
-    function Go(module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__extends", function () {
-        return __extends;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__assign", function () {
-        return _assign;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__rest", function () {
-        return __rest;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__decorate", function () {
-        return __decorate;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__param", function () {
-        return __param;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__metadata", function () {
-        return __metadata;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
-        return __awaiter;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__generator", function () {
-        return __generator;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__createBinding", function () {
-        return __createBinding;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
-        return __exportStar;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__values", function () {
-        return __values;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__read", function () {
-        return __read;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__spread", function () {
-        return __spread;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
-        return __spreadArrays;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__await", function () {
-        return __await;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
-        return __asyncGenerator;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
-        return __asyncDelegator;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
-        return __asyncValues;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
-        return __makeTemplateObject;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__importStar", function () {
-        return __importStar;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
-        return __importDefault;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
-        return __classPrivateFieldGet;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
-        return __classPrivateFieldSet;
-      });
-      /*! *****************************************************************************
-      Copyright (c) Microsoft Corporation.
-      
-      Permission to use, copy, modify, and/or distribute this software for any
-      purpose with or without fee is hereby granted.
-      
-      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-      OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-      PERFORMANCE OF THIS SOFTWARE.
-      ***************************************************************************** */
-
-      /* global Reflect, Promise */
-
-
-      var _extendStatics = function extendStatics(d, b) {
-        _extendStatics = Object.setPrototypeOf || {
-          __proto__: []
-        } instanceof Array && function (d, b) {
-          d.__proto__ = b;
-        } || function (d, b) {
-          for (var p in b) {
-            if (b.hasOwnProperty(p)) d[p] = b[p];
-          }
-        };
-
-        return _extendStatics(d, b);
-      };
-
-      function __extends(d, b) {
-        _extendStatics(d, b);
-
-        function __() {
-          this.constructor = d;
-        }
-
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-      }
-
-      var _assign = function __assign() {
-        _assign = Object.assign || function __assign(t) {
-          for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-
-            for (var p in s) {
-              if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-            }
-          }
-
-          return t;
-        };
-
-        return _assign.apply(this, arguments);
-      };
-
-      function __rest(s, e) {
-        var t = {};
-
-        for (var p in s) {
-          if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-        }
-
-        if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-        }
-        return t;
-      }
-
-      function __decorate(decorators, target, key, desc) {
-        var c = arguments.length,
-            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
-            d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-          if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        }
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-      }
-
-      function __param(paramIndex, decorator) {
-        return function (target, key) {
-          decorator(target, key, paramIndex);
-        };
-      }
-
-      function __metadata(metadataKey, metadataValue) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-      }
-
-      function __awaiter(thisArg, _arguments, P, generator) {
-        function adopt(value) {
-          return value instanceof P ? value : new P(function (resolve) {
-            resolve(value);
-          });
-        }
-
-        return new (P || (P = Promise))(function (resolve, reject) {
-          function fulfilled(value) {
-            try {
-              step(generator.next(value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-
-          function rejected(value) {
-            try {
-              step(generator["throw"](value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-
-          function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-          }
-
-          step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-      }
-
-      function __generator(thisArg, body) {
-        var _ = {
-          label: 0,
-          sent: function sent() {
-            if (t[0] & 1) throw t[1];
-            return t[1];
-          },
-          trys: [],
-          ops: []
-        },
-            f,
-            y,
-            t,
-            g;
-        return g = {
-          next: verb(0),
-          "throw": verb(1),
-          "return": verb(2)
-        }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
-          return this;
-        }), g;
-
-        function verb(n) {
-          return function (v) {
-            return step([n, v]);
-          };
-        }
-
-        function step(op) {
-          if (f) throw new TypeError("Generator is already executing.");
-
-          while (_) {
-            try {
-              if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-              if (y = 0, t) op = [op[0] & 2, t.value];
-
-              switch (op[0]) {
-                case 0:
-                case 1:
-                  t = op;
-                  break;
-
-                case 4:
-                  _.label++;
-                  return {
-                    value: op[1],
-                    done: false
-                  };
-
-                case 5:
-                  _.label++;
-                  y = op[1];
-                  op = [0];
-                  continue;
-
-                case 7:
-                  op = _.ops.pop();
-
-                  _.trys.pop();
-
-                  continue;
-
-                default:
-                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-                    _ = 0;
-                    continue;
-                  }
-
-                  if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-                    _.label = op[1];
-                    break;
-                  }
-
-                  if (op[0] === 6 && _.label < t[1]) {
-                    _.label = t[1];
-                    t = op;
-                    break;
-                  }
-
-                  if (t && _.label < t[2]) {
-                    _.label = t[2];
-
-                    _.ops.push(op);
-
-                    break;
-                  }
-
-                  if (t[2]) _.ops.pop();
-
-                  _.trys.pop();
-
-                  continue;
-              }
-
-              op = body.call(thisArg, _);
-            } catch (e) {
-              op = [6, e];
-              y = 0;
-            } finally {
-              f = t = 0;
-            }
-          }
-
-          if (op[0] & 5) throw op[1];
-          return {
-            value: op[0] ? op[1] : void 0,
-            done: true
-          };
-        }
-      }
-
-      function __createBinding(o, m, k, k2) {
-        if (k2 === undefined) k2 = k;
-        o[k2] = m[k];
-      }
-
-      function __exportStar(m, exports) {
-        for (var p in m) {
-          if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
-        }
-      }
-
-      function __values(o) {
-        var s = typeof Symbol === "function" && Symbol.iterator,
-            m = s && o[s],
-            i = 0;
-        if (m) return m.call(o);
-        if (o && typeof o.length === "number") return {
-          next: function next() {
-            if (o && i >= o.length) o = void 0;
-            return {
-              value: o && o[i++],
-              done: !o
-            };
-          }
-        };
-        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-      }
-
-      function __read(o, n) {
-        var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m) return o;
-        var i = m.call(o),
-            r,
-            ar = [],
-            e;
-
-        try {
-          while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-            ar.push(r.value);
-          }
-        } catch (error) {
-          e = {
-            error: error
-          };
-        } finally {
-          try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-          } finally {
-            if (e) throw e.error;
-          }
-        }
-
-        return ar;
-      }
-
-      function __spread() {
-        for (var ar = [], i = 0; i < arguments.length; i++) {
-          ar = ar.concat(__read(arguments[i]));
-        }
-
-        return ar;
-      }
-
-      function __spreadArrays() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
-          s += arguments[i].length;
-        }
-
-        for (var r = Array(s), k = 0, i = 0; i < il; i++) {
-          for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
-            r[k] = a[j];
-          }
-        }
-
-        return r;
-      }
-
-      ;
-
-      function __await(v) {
-        return this instanceof __await ? (this.v = v, this) : new __await(v);
-      }
-
-      function __asyncGenerator(thisArg, _arguments, generator) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var g = generator.apply(thisArg, _arguments || []),
-            i,
-            q = [];
-        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
-          return this;
-        }, i;
-
-        function verb(n) {
-          if (g[n]) i[n] = function (v) {
-            return new Promise(function (a, b) {
-              q.push([n, v, a, b]) > 1 || resume(n, v);
-            });
-          };
-        }
-
-        function resume(n, v) {
-          try {
-            step(g[n](v));
-          } catch (e) {
-            settle(q[0][3], e);
-          }
-        }
-
-        function step(r) {
-          r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
-        }
-
-        function fulfill(value) {
-          resume("next", value);
-        }
-
-        function reject(value) {
-          resume("throw", value);
-        }
-
-        function settle(f, v) {
-          if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
-        }
-      }
-
-      function __asyncDelegator(o) {
-        var i, p;
-        return i = {}, verb("next"), verb("throw", function (e) {
-          throw e;
-        }), verb("return"), i[Symbol.iterator] = function () {
-          return this;
-        }, i;
-
-        function verb(n, f) {
-          i[n] = o[n] ? function (v) {
-            return (p = !p) ? {
-              value: __await(o[n](v)),
-              done: n === "return"
-            } : f ? f(v) : v;
-          } : f;
-        }
-      }
-
-      function __asyncValues(o) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-        var m = o[Symbol.asyncIterator],
-            i;
-        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
-          return this;
-        }, i);
-
-        function verb(n) {
-          i[n] = o[n] && function (v) {
-            return new Promise(function (resolve, reject) {
-              v = o[n](v), settle(resolve, reject, v.done, v.value);
-            });
-          };
-        }
-
-        function settle(resolve, reject, d, v) {
-          Promise.resolve(v).then(function (v) {
-            resolve({
-              value: v,
-              done: d
-            });
-          }, reject);
-        }
-      }
-
-      function __makeTemplateObject(cooked, raw) {
-        if (Object.defineProperty) {
-          Object.defineProperty(cooked, "raw", {
-            value: raw
-          });
-        } else {
-          cooked.raw = raw;
-        }
-
-        return cooked;
-      }
-
-      ;
-
-      function __importStar(mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k in mod) {
-          if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-        }
-        result["default"] = mod;
-        return result;
-      }
-
-      function __importDefault(mod) {
-        return mod && mod.__esModule ? mod : {
-          "default": mod
-        };
-      }
-
-      function __classPrivateFieldGet(receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-          throw new TypeError("attempted to get private field on non-instance");
-        }
-
-        return privateMap.get(receiver);
-      }
-
-      function __classPrivateFieldSet(receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-          throw new TypeError("attempted to set private field on non-instance");
-        }
-
-        privateMap.set(receiver, value);
-        return value;
-      }
-      /***/
-
-    },
-
-    /***/
     "41K8":
     /*!*******************************************!*\
       !*** ./src/app/editors/editors.module.ts ***!
@@ -1438,7 +834,7 @@
 
       var tslib = __webpack_require__(
       /*! tslib */
-      "30Go");
+      "mAIw");
 
       var util = __webpack_require__(
       /*! @firebase/util */
@@ -24481,7 +23877,7 @@
 
       var tslib = __webpack_require__(
       /*! tslib */
-      "30Go");
+      "mAIw");
 
       var util = __webpack_require__(
       /*! @firebase/util */
@@ -25312,37 +24708,43 @@
       /* harmony import */
 
 
-      var _editors_float_float_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+      /* harmony import */
+
+
+      var _editors_float_float_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./editors/float/float.component */
       "oRbG");
       /* harmony import */
 
 
-      var _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./editors/enum/enum.component */
       "pjps");
       /* harmony import */
 
 
-      var _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      var _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./editors/boolean/boolean.component */
       "/ayl");
       /* harmony import */
 
 
-      var _editors_void_void_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+      var _editors_void_void_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./editors/void/void.component */
       "xoEW");
       /* harmony import */
 
 
-      var _editors_color_color_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      var _editors_color_color_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./editors/color/color.component */
       "I85h");
       /* harmony import */
 
 
-      var _editors_string_string_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _editors_string_string_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ./editors/string/string.component */
       "MjS4"); // Copyright 2019 Google LLC
       //
@@ -25371,7 +24773,7 @@
 
       function TweakrComponent_mat_card_1_span_2_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -25389,7 +24791,7 @@
 
       function TweakrComponent_mat_card_1_editors_float_7_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-float", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-float", 9);
         }
 
         if (rf & 2) {
@@ -25401,7 +24803,7 @@
 
       function TweakrComponent_mat_card_1_editors_float_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-float", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-float", 9);
         }
 
         if (rf & 2) {
@@ -25413,7 +24815,7 @@
 
       function TweakrComponent_mat_card_1_editors_enum_9_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-enum", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-enum", 9);
         }
 
         if (rf & 2) {
@@ -25425,7 +24827,7 @@
 
       function TweakrComponent_mat_card_1_editors_boolean_10_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-boolean", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-boolean", 9);
         }
 
         if (rf & 2) {
@@ -25437,7 +24839,7 @@
 
       function TweakrComponent_mat_card_1_editors_void_11_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-void", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-void", 9);
         }
 
         if (rf & 2) {
@@ -25449,7 +24851,7 @@
 
       function TweakrComponent_mat_card_1_editors_color_12_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-color", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-color", 9);
         }
 
         if (rf & 2) {
@@ -25461,7 +24863,7 @@
 
       function TweakrComponent_mat_card_1_editors_string_13_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-string", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "editors-string", 9);
         }
 
         if (rf & 2) {
@@ -25504,6 +24906,21 @@
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, TweakrComponent_mat_card_1_editors_color_12_Template, 1, 1, "editors-color", 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, TweakrComponent_mat_card_1_editors_string_13_Template, 1, 1, "editors-string", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-card-actions");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function TweakrComponent_mat_card_1_Template_button_click_15_listener() {
+            var tweak_r2 = ctx.$implicit;
+            return tweak_r2.resetToInitialValue();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, " Reset to Default ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -25640,12 +25057,12 @@
         },
         decls: 2,
         vars: 2,
-        consts: [[4, "ngIf"], ["class", "tweak", 4, "ngFor", "ngForOf"], [1, "tweak"], ["class", "tweak-name-part", 4, "ngFor", "ngForOf"], [3, "ngSwitch"], [3, "tweak", 4, "ngSwitchCase"], [3, "tweak", 4, "ngSwitchDefault"], [1, "tweak-name-part"], [3, "tweak"]],
+        consts: [[4, "ngIf"], ["class", "tweak", 4, "ngFor", "ngForOf"], [1, "tweak"], ["class", "tweak-name-part", 4, "ngFor", "ngForOf"], [3, "ngSwitch"], [3, "tweak", 4, "ngSwitchCase"], [3, "tweak", 4, "ngSwitchDefault"], ["mat-button", "", 3, "click"], [1, "tweak-name-part"], [3, "tweak"]],
         template: function TweakrComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, TweakrComponent_p_0_Template, 2, 0, "p", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TweakrComponent_mat_card_1_Template, 14, 9, "mat-card", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TweakrComponent_mat_card_1_Template, 17, 9, "mat-card", 1);
           }
 
           if (rf & 2) {
@@ -25656,7 +25073,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.tweaks);
           }
         },
-        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchDefault"], _editors_float_float_component__WEBPACK_IMPORTED_MODULE_7__["FloatComponent"], _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_8__["EnumComponent"], _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_9__["BooleanComponent"], _editors_void_void_component__WEBPACK_IMPORTED_MODULE_10__["VoidComponent"], _editors_color_color_component__WEBPACK_IMPORTED_MODULE_11__["ColorComponent"], _editors_string_string_component__WEBPACK_IMPORTED_MODULE_12__["StringComponent"]],
+        directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardContent"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitch"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchCase"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgSwitchDefault"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardActions"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _editors_float_float_component__WEBPACK_IMPORTED_MODULE_8__["FloatComponent"], _editors_enum_enum_component__WEBPACK_IMPORTED_MODULE_9__["EnumComponent"], _editors_boolean_boolean_component__WEBPACK_IMPORTED_MODULE_10__["BooleanComponent"], _editors_void_void_component__WEBPACK_IMPORTED_MODULE_11__["VoidComponent"], _editors_color_color_component__WEBPACK_IMPORTED_MODULE_12__["ColorComponent"], _editors_string_string_component__WEBPACK_IMPORTED_MODULE_13__["StringComponent"]],
         styles: [".tweak[_ngcontent-%COMP%] {\n  margin: 16px;\n}\n\n.tweak[_ngcontent-%COMP%]   .mat-card-title[_ngcontent-%COMP%] {\n  font-size: 20px;\n}\n\n.tweak-name-part[_ngcontent-%COMP%] {\n  color: #888;\n}\n\n.tweak-name-part[_ngcontent-%COMP%]::after {\n  content: \":\";\n}\n\n.tweak-name-part[_ngcontent-%COMP%]:last-of-type {\n  color: #111;\n}\n\n.tweak-name-part[_ngcontent-%COMP%]:last-of-type::after {\n  content: \"\";\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdHdlYWtyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBQTtBQUNKOztBQUVBO0VBQ0ksZUFBQTtBQUNKOztBQUVBO0VBQ0ksV0FBQTtBQUNKOztBQUVJO0VBQ0ksWUFBQTtBQUNSOztBQUVJO0VBQ0ksV0FBQTtBQUNSOztBQUVRO0VBQ0ksV0FBQTtBQUNaIiwiZmlsZSI6InNyYy9hcHAvdHdlYWtyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnR3ZWFrIHtcbiAgICBtYXJnaW46IDE2cHg7XG59XG5cbi50d2VhayAubWF0LWNhcmQtdGl0bGUge1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbn1cblxuLnR3ZWFrLW5hbWUtcGFydCB7XG4gICAgY29sb3I6ICM4ODg7XG59XG5cbiAgICAudHdlYWstbmFtZS1wYXJ0OjphZnRlciB7XG4gICAgICAgIGNvbnRlbnQ6ICc6JztcbiAgICB9XG5cbiAgICAudHdlYWstbmFtZS1wYXJ0Omxhc3Qtb2YtdHlwZSB7XG4gICAgICAgIGNvbG9yOiAjMTExO1xuICAgIH1cblxuICAgICAgICAudHdlYWstbmFtZS1wYXJ0Omxhc3Qtb2YtdHlwZTo6YWZ0ZXIge1xuICAgICAgICAgICAgY29udGVudDogJyc7XG4gICAgICAgIH0iXX0= */"]
       });
       /*@__PURE__*/
@@ -25901,12 +25318,20 @@
         }, {
           key: "calculateMin",
           value: function calculateMin(currentValue) {
-            this.min = currentValue - Math.abs(currentValue / 2);
+            if (this.isProbablyNormalized(currentValue)) {
+              this.min = 0;
+            } else {
+              this.min = Math.min(0, currentValue - Math.abs(currentValue / 2));
+            }
           }
         }, {
           key: "calculateMax",
           value: function calculateMax(currentValue) {
-            this.max = currentValue + Math.abs(currentValue / 2);
+            if (this.isProbablyNormalized(currentValue)) {
+              this.max = 1;
+            } else {
+              this.max = currentValue + Math.abs(currentValue / 2);
+            }
           }
           /**
            * Call to set a new value.
@@ -25920,11 +25345,11 @@
             if (this.type === 'float' || this.type === 'int') {
               this.value = +newValue;
 
-              if (this.value > this.max) {
+              if (this.value > this.max || this.isProbablyNormalized(this.value)) {
                 this.calculateMax(this.value);
               }
 
-              if (this.value < this.min) {
+              if (this.value < this.min || this.isProbablyNormalized(this.value)) {
                 this.calculateMin(this.value);
               }
             } else {
@@ -25933,10 +25358,624 @@
 
             this.onChangeListener(this.value);
           }
+        }, {
+          key: "resetToInitialValue",
+          value: function resetToInitialValue() {
+            this.onChange(this.initialValue);
+          }
+        }, {
+          key: "isProbablyNormalized",
+          value: function isProbablyNormalized(currentValue) {
+            return this.type === 'float' && currentValue <= 1 && currentValue >= 0 && this.initialValue <= 1 && this.initialValue >= 0;
+          }
         }]);
 
         return Tweak;
       }();
+      /***/
+
+    },
+
+    /***/
+    "mAIw":
+    /*!*************************************************************************!*\
+      !*** ./node_modules/@firebase/database/node_modules/tslib/tslib.es6.js ***!
+      \*************************************************************************/
+
+    /*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+
+    /***/
+    function mAIw(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__extends", function () {
+        return __extends;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__assign", function () {
+        return _assign;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__rest", function () {
+        return __rest;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__decorate", function () {
+        return __decorate;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__param", function () {
+        return __param;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__metadata", function () {
+        return __metadata;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__awaiter", function () {
+        return __awaiter;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__generator", function () {
+        return __generator;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__createBinding", function () {
+        return __createBinding;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__exportStar", function () {
+        return __exportStar;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__values", function () {
+        return __values;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__read", function () {
+        return __read;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__spread", function () {
+        return __spread;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__spreadArrays", function () {
+        return __spreadArrays;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__await", function () {
+        return __await;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__asyncGenerator", function () {
+        return __asyncGenerator;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__asyncDelegator", function () {
+        return __asyncDelegator;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__asyncValues", function () {
+        return __asyncValues;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__makeTemplateObject", function () {
+        return __makeTemplateObject;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__importStar", function () {
+        return __importStar;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__importDefault", function () {
+        return __importDefault;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function () {
+        return __classPrivateFieldGet;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function () {
+        return __classPrivateFieldSet;
+      });
+      /*! *****************************************************************************
+      Copyright (c) Microsoft Corporation.
+      
+      Permission to use, copy, modify, and/or distribute this software for any
+      purpose with or without fee is hereby granted.
+      
+      THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+      REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+      INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+      LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+      OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+      PERFORMANCE OF THIS SOFTWARE.
+      ***************************************************************************** */
+
+      /* global Reflect, Promise */
+
+
+      var _extendStatics = function extendStatics(d, b) {
+        _extendStatics = Object.setPrototypeOf || {
+          __proto__: []
+        } instanceof Array && function (d, b) {
+          d.__proto__ = b;
+        } || function (d, b) {
+          for (var p in b) {
+            if (b.hasOwnProperty(p)) d[p] = b[p];
+          }
+        };
+
+        return _extendStatics(d, b);
+      };
+
+      function __extends(d, b) {
+        _extendStatics(d, b);
+
+        function __() {
+          this.constructor = d;
+        }
+
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+      }
+
+      var _assign = function __assign() {
+        _assign = Object.assign || function __assign(t) {
+          for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+
+            for (var p in s) {
+              if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+            }
+          }
+
+          return t;
+        };
+
+        return _assign.apply(this, arguments);
+      };
+
+      function __rest(s, e) {
+        var t = {};
+
+        for (var p in s) {
+          if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+        }
+
+        if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+        }
+        return t;
+      }
+
+      function __decorate(decorators, target, key, desc) {
+        var c = arguments.length,
+            r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+            d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+          if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        }
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+      }
+
+      function __param(paramIndex, decorator) {
+        return function (target, key) {
+          decorator(target, key, paramIndex);
+        };
+      }
+
+      function __metadata(metadataKey, metadataValue) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+      }
+
+      function __awaiter(thisArg, _arguments, P, generator) {
+        function adopt(value) {
+          return value instanceof P ? value : new P(function (resolve) {
+            resolve(value);
+          });
+        }
+
+        return new (P || (P = Promise))(function (resolve, reject) {
+          function fulfilled(value) {
+            try {
+              step(generator.next(value));
+            } catch (e) {
+              reject(e);
+            }
+          }
+
+          function rejected(value) {
+            try {
+              step(generator["throw"](value));
+            } catch (e) {
+              reject(e);
+            }
+          }
+
+          function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+          }
+
+          step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+      }
+
+      function __generator(thisArg, body) {
+        var _ = {
+          label: 0,
+          sent: function sent() {
+            if (t[0] & 1) throw t[1];
+            return t[1];
+          },
+          trys: [],
+          ops: []
+        },
+            f,
+            y,
+            t,
+            g;
+        return g = {
+          next: verb(0),
+          "throw": verb(1),
+          "return": verb(2)
+        }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+          return this;
+        }), g;
+
+        function verb(n) {
+          return function (v) {
+            return step([n, v]);
+          };
+        }
+
+        function step(op) {
+          if (f) throw new TypeError("Generator is already executing.");
+
+          while (_) {
+            try {
+              if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+              if (y = 0, t) op = [op[0] & 2, t.value];
+
+              switch (op[0]) {
+                case 0:
+                case 1:
+                  t = op;
+                  break;
+
+                case 4:
+                  _.label++;
+                  return {
+                    value: op[1],
+                    done: false
+                  };
+
+                case 5:
+                  _.label++;
+                  y = op[1];
+                  op = [0];
+                  continue;
+
+                case 7:
+                  op = _.ops.pop();
+
+                  _.trys.pop();
+
+                  continue;
+
+                default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                    _ = 0;
+                    continue;
+                  }
+
+                  if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                    _.label = op[1];
+                    break;
+                  }
+
+                  if (op[0] === 6 && _.label < t[1]) {
+                    _.label = t[1];
+                    t = op;
+                    break;
+                  }
+
+                  if (t && _.label < t[2]) {
+                    _.label = t[2];
+
+                    _.ops.push(op);
+
+                    break;
+                  }
+
+                  if (t[2]) _.ops.pop();
+
+                  _.trys.pop();
+
+                  continue;
+              }
+
+              op = body.call(thisArg, _);
+            } catch (e) {
+              op = [6, e];
+              y = 0;
+            } finally {
+              f = t = 0;
+            }
+          }
+
+          if (op[0] & 5) throw op[1];
+          return {
+            value: op[0] ? op[1] : void 0,
+            done: true
+          };
+        }
+      }
+
+      function __createBinding(o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      }
+
+      function __exportStar(m, exports) {
+        for (var p in m) {
+          if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
+        }
+      }
+
+      function __values(o) {
+        var s = typeof Symbol === "function" && Symbol.iterator,
+            m = s && o[s],
+            i = 0;
+        if (m) return m.call(o);
+        if (o && typeof o.length === "number") return {
+          next: function next() {
+            if (o && i >= o.length) o = void 0;
+            return {
+              value: o && o[i++],
+              done: !o
+            };
+          }
+        };
+        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+      }
+
+      function __read(o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m) return o;
+        var i = m.call(o),
+            r,
+            ar = [],
+            e;
+
+        try {
+          while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
+            ar.push(r.value);
+          }
+        } catch (error) {
+          e = {
+            error: error
+          };
+        } finally {
+          try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+          } finally {
+            if (e) throw e.error;
+          }
+        }
+
+        return ar;
+      }
+
+      function __spread() {
+        for (var ar = [], i = 0; i < arguments.length; i++) {
+          ar = ar.concat(__read(arguments[i]));
+        }
+
+        return ar;
+      }
+
+      function __spreadArrays() {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++) {
+          s += arguments[i].length;
+        }
+
+        for (var r = Array(s), k = 0, i = 0; i < il; i++) {
+          for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++) {
+            r[k] = a[j];
+          }
+        }
+
+        return r;
+      }
+
+      ;
+
+      function __await(v) {
+        return this instanceof __await ? (this.v = v, this) : new __await(v);
+      }
+
+      function __asyncGenerator(thisArg, _arguments, generator) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var g = generator.apply(thisArg, _arguments || []),
+            i,
+            q = [];
+        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+          return this;
+        }, i;
+
+        function verb(n) {
+          if (g[n]) i[n] = function (v) {
+            return new Promise(function (a, b) {
+              q.push([n, v, a, b]) > 1 || resume(n, v);
+            });
+          };
+        }
+
+        function resume(n, v) {
+          try {
+            step(g[n](v));
+          } catch (e) {
+            settle(q[0][3], e);
+          }
+        }
+
+        function step(r) {
+          r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+        }
+
+        function fulfill(value) {
+          resume("next", value);
+        }
+
+        function reject(value) {
+          resume("throw", value);
+        }
+
+        function settle(f, v) {
+          if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]);
+        }
+      }
+
+      function __asyncDelegator(o) {
+        var i, p;
+        return i = {}, verb("next"), verb("throw", function (e) {
+          throw e;
+        }), verb("return"), i[Symbol.iterator] = function () {
+          return this;
+        }, i;
+
+        function verb(n, f) {
+          i[n] = o[n] ? function (v) {
+            return (p = !p) ? {
+              value: __await(o[n](v)),
+              done: n === "return"
+            } : f ? f(v) : v;
+          } : f;
+        }
+      }
+
+      function __asyncValues(o) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var m = o[Symbol.asyncIterator],
+            i;
+        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () {
+          return this;
+        }, i);
+
+        function verb(n) {
+          i[n] = o[n] && function (v) {
+            return new Promise(function (resolve, reject) {
+              v = o[n](v), settle(resolve, reject, v.done, v.value);
+            });
+          };
+        }
+
+        function settle(resolve, reject, d, v) {
+          Promise.resolve(v).then(function (v) {
+            resolve({
+              value: v,
+              done: d
+            });
+          }, reject);
+        }
+      }
+
+      function __makeTemplateObject(cooked, raw) {
+        if (Object.defineProperty) {
+          Object.defineProperty(cooked, "raw", {
+            value: raw
+          });
+        } else {
+          cooked.raw = raw;
+        }
+
+        return cooked;
+      }
+
+      ;
+
+      function __importStar(mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k in mod) {
+          if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+        }
+        result["default"] = mod;
+        return result;
+      }
+
+      function __importDefault(mod) {
+        return mod && mod.__esModule ? mod : {
+          "default": mod
+        };
+      }
+
+      function __classPrivateFieldGet(receiver, privateMap) {
+        if (!privateMap.has(receiver)) {
+          throw new TypeError("attempted to get private field on non-instance");
+        }
+
+        return privateMap.get(receiver);
+      }
+
+      function __classPrivateFieldSet(receiver, privateMap, value) {
+        if (!privateMap.has(receiver)) {
+          throw new TypeError("attempted to set private field on non-instance");
+        }
+
+        privateMap.set(receiver, value);
+        return value;
+      }
       /***/
 
     },
@@ -26626,6 +26665,42 @@
           return _super8.call(this);
         }
 
+        _createClass(FloatComponent, [{
+          key: "rangeMin",
+          value: function rangeMin() {
+            return this.tweak.min * this.getValueMultiplier();
+          }
+        }, {
+          key: "rangeMax",
+          value: function rangeMax() {
+            return this.tweak.max * this.getValueMultiplier();
+          }
+        }, {
+          key: "rangeValue",
+          value: function rangeValue() {
+            return this.tweak.value * this.getValueMultiplier();
+          }
+        }, {
+          key: "rangeOnChange",
+          value: function rangeOnChange(value) {
+            return this.tweak.onChange(+value / this.getValueMultiplier());
+          }
+          /**
+           * This adjusts the value from the range in case we are using
+           * floats/fractions, which the range input does not natively support.
+           */
+
+        }, {
+          key: "getValueMultiplier",
+          value: function getValueMultiplier() {
+            if (this.tweak.max < 10 && this.tweak.min > -10) {
+              return 100;
+            }
+
+            return 1;
+          }
+        }]);
+
         return FloatComponent;
       }(_editor_editor_component__WEBPACK_IMPORTED_MODULE_1__["EditorComponent"]);
 
@@ -26647,7 +26722,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 1, 2);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function FloatComponent_Template_input_ngModelChange_1_listener($event) {
-              return ctx.tweak.onChange($event);
+              return ctx.rangeOnChange($event);
             });
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -26666,11 +26741,11 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("min", ctx.tweak.min);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("min", ctx.rangeMin());
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("max", ctx.tweak.max);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("max", ctx.rangeMax());
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.tweak.value);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.rangeValue());
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -29317,7 +29392,7 @@
 
       var tslib = __webpack_require__(
       /*! tslib */
-      "30Go");
+      "mAIw");
 
       var util = __webpack_require__(
       /*! @firebase/util */
@@ -30261,7 +30336,7 @@
 
       var tslib = __webpack_require__(
       /*! tslib */
-      "30Go");
+      "mAIw");
       /**
        * @license
        * Copyright 2017 Google LLC
