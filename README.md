@@ -170,6 +170,8 @@ Firebase Console
 Feature Roadmap / TODO
 ======================
 
+- Fix buttons to not run on initial register.
+- Support explicit min/max value setting in @Tweak annotation.
 - Support multiple children in @Tweak annotation
 - Support array types
 - Support registering additional ValueTypeConverters
