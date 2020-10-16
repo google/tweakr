@@ -56,7 +56,7 @@ export class Tweak {
     if (this.isProbablyNormalized(currentValue)) {
       this.min = 0;
     } else {
-      this.min = currentValue - Math.abs(currentValue / 2);
+      this.min = Math.min(0, currentValue - Math.abs(currentValue / 2));
     }
   }
 
