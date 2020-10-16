@@ -53,11 +53,19 @@ export class Tweak {
   }
 
   private calculateMin(currentValue: number) {
-    this.min = currentValue - Math.abs(currentValue / 2);
+    if (this.isProbablyNormalized(currentValue)) {
+      this.min = 0;
+    } else {
+      this.min = currentValue - Math.abs(currentValue / 2);
+    }
   }
 
   private calculateMax(currentValue: number) {
-    this.max = currentValue + Math.abs(currentValue / 2);
+    if (this.isProbablyNormalized(currentValue)) {
+      this.max = 1;
+    } else {
+      this.max = currentValue + Math.abs(currentValue / 2);
+    }
   }
 
   /**
@@ -81,5 +89,9 @@ export class Tweak {
     }
 
     this.onChangeListener(this.value);
+  }
+
+  private isProbablyNormalized(currentValue) {
+    return currentValue < 1 && currentValue > 0;
   }
 }
