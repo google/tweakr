@@ -26,5 +26,32 @@ export class FloatComponent extends EditorComponent {
     super();
   }
 
+  rangeMin() {
+    return this.tweak.min * this.getValueMultiplier();
+  }
+
+  rangeMax() {
+    return this.tweak.max * this.getValueMultiplier();
+  }
+
+  rangeValue() {
+    return this.tweak.value * this.getValueMultiplier();
+  }
+
+  rangeOnChange(value) {
+    return this.tweak.onChange(+value / this.getValueMultiplier());
+  }
+
+  /**
+   * This adjusts the value from the range in case we are using
+   * floats/fractions, which the range input does not natively support.
+   */
+  getValueMultiplier() {
+    if (this.tweak.max < 10 && this.tweak.min > -10) {
+      return 100;
+    }
+
+    return 1;
+  }
 }
 

@@ -1,6 +1,4 @@
 <div class='editor'>
-    <!-- TODO: use intermediate float values when max-min < 10 -->
-    <input type="range" #range min="{{tweak.min}}" max="{{tweak.max}}" [ngModel]="tweak.value" name='tweakValue' (ngModelChange)="tweak.onChange($event)" /> 
-    <input type="text" #text [ngModel]="tweak.value" name='tweakValueText' (ngModelChange)="tweak.onChange($event)" /> 
+    <input type="range" #range min="{{rangeMin()}}" max="{{rangeMax()}}" [ngModel]="rangeValue()" name='tweakValue' (ngModelChange)="rangeOnChange($event)" />
+    <input type="text" #text [ngModel]="tweak.value" name='tweakValueText' (ngModelChange)="tweak.onChange($event)" />
 </div>
-  
