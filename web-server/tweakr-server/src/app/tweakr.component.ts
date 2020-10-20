@@ -15,7 +15,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable, of } from 'rxjs';
-import { flatMap, filter } from 'rxjs/operators';
+import { flatMap, filter, tap } from 'rxjs/operators';
 import { Tweak } from './Tweak';
 
 @Component({
@@ -34,12 +34,22 @@ export class TweakrComponent implements OnInit {
     const tweakr = this.db.object(this.tweakrRoot);
     // TODO: unsubscribe from this on destroy.
     tweakr.valueChanges()
-      .pipe(filter(root => !!root), flatMap((root: {}) =>
-        of(Object.keys(root).map(key => new Tweak(key, root[key], (value: any) => {
-          this.db.object(this.tweakrRoot + '/' + key).update({value});
-        })))
-      ))
+      .pipe(
+        tap(root => {
+          // Clear all if it was deleted.
+          if (!root) {
+            this.tweaks = null;
+          }
+        }),
+        filter(root => !!root),
+        flatMap((root: {}) =>
+          of(Object.keys(root).map(key => new Tweak(key, root[key], (value: any) => {
+            this.db.object(this.tweakrRoot + '/' + key).update({value});
+          })))
+        )
+      )
       .subscribe((updates) => {
+        //console.log('Tweak updated ', updates);
         // We have to manually update our models, so Angular doesn't clobber everything
         // and rerender it, which makes you lose hold of the range inputs.
         if (!this.tweaks) {
@@ -57,7 +67,8 @@ export class TweakrComponent implements OnInit {
             if (!isFound) {
               this.tweaks.push(update);
             }
-            // NOTE: we don't have to worry about removing old ones right now, since the Android client can't do that anyway.
+            // NOTE: we don't have to worry about removing old ones right now,
+            // since the Android client can't do that anyway, and the Reset All is handed higher up.
           }
         }
       });

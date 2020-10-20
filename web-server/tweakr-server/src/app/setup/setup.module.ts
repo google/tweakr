@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { SetupRoutingModule } from './setup-routing.module';
 import { SetupComponent } from './setup.component';
@@ -20,6 +21,7 @@ import { SetupComponent } from './setup.component';
     MatCardModule,
     MatExpansionModule,
     MatInputModule,
+    MatToolbarModule,
     ReactiveFormsModule,
     SetupRoutingModule
   ]

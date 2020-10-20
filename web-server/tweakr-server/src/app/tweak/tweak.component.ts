@@ -16,7 +16,9 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {auth} from 'firebase/app';
-import {first} from 'rxjs/operators';
+
+import { Observable, of } from 'rxjs';
+import { first, flatMap, filter, toArray } from 'rxjs/operators';
 
 // You can use a default user here, or write something more complicated like
 // prompting the user for login at the launch of the app. If you use email
@@ -76,5 +78,22 @@ export class TweakComponent implements OnInit {
 
   logout() {
     this.afAuth.signOut();
+  }
+
+  async onResetAllClicked() {
+    // TODO: confirmation dialog
+    const tweakr = this.db.object(this.tweakrRoot);
+    tweakr.valueChanges()
+      .pipe(
+        filter(root => !!root),
+        first(),
+        flatMap((root: {}) =>
+          of(Object.keys(root).map(key =>
+            this.db.object(this.tweakrRoot + '/' + key).remove()
+          ))
+        ),
+        toArray()
+      )
+      .subscribe((items) => console.log('Deleted ', items));
   }
 }

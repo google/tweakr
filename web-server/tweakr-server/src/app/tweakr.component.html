@@ -1,6 +1,10 @@
-<p *ngIf='!tweaks || tweaks.length == 0'>
-  No Tweaks found. Please annotate a property in your Android app and run the app.
-</p>
+<mat-card *ngIf='!tweaks || tweaks.length == 0'>
+  <mat-card-content>
+    <p>
+      No Tweaks found. Please annotate a property in your Android app and run the app.
+    </p>
+  </mat-card-content>
+</mat-card>
 
 <mat-card *ngFor="let tweak of tweaks" class='tweak'>
   <mat-card-title><span class='tweak-name-part' *ngFor="let part of tweak.id.split(':')"> {{part}} </span></mat-card-title>

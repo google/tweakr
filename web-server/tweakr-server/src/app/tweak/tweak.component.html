@@ -1,3 +1,12 @@
+<mat-toolbar color="primary">
+    <span>Tweakr</span>
+
+    <span class="example-spacer"></span>
+    <button mat-button (click)="onResetAllClicked()">
+      Reset all
+    </button>
+</mat-toolbar>
+
 <p *ngIf="statusText">{{statusText}}</p>
 
 <app-tweakr *ngIf="isLoggedIn" [tweakrRoot]="tweakrRoot"></app-tweakr>
