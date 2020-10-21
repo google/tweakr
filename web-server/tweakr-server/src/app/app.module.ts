@@ -19,18 +19,25 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ConfirmationDialogComponent],
   imports: [
     BrowserModule, BrowserAnimationsModule, AppRoutingModule,
-    FormsModule, MatButtonModule, MatCardModule, MatToolbarModule
+    FormsModule, MatButtonModule, MatCardModule, MatToolbarModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    ConfirmationDialogComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [ConfirmationDialogComponent]
 })
 export class AppModule {
 }

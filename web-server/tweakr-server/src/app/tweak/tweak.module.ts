@@ -12,9 +12,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {EditorsModule} from '../editors/editors.module';
 import {TweakrComponent} from '../tweakr.component';
+
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 import {getFirebaseConfig} from '../firebase_config';
 
@@ -28,7 +31,7 @@ import {getFirebaseConfig} from '../firebase_config';
     AngularFireAuthModule, AngularFireDatabaseModule,
     EditorsModule,
     MatButtonModule, MatCardModule, MatToolbarModule,
-    MatRadioModule
-  ]
+    MatRadioModule, MatDialogModule
+  ],
 })
 export class TweakModule { }

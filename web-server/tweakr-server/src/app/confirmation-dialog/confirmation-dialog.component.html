@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{getTitle()}}</h2>
+<mat-dialog-content class="mat-typography">
+  <p>{{getMessage()}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-button [mat-dialog-close]="true">{{getAction()}}</button>
+</mat-dialog-actions>

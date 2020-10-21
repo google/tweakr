@@ -17,6 +17,10 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {auth} from 'firebase/app';
 
+import {MatDialog} from '@angular/material/dialog';
+
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+
 import { Observable, of } from 'rxjs';
 import { first, flatMap, filter, toArray } from 'rxjs/operators';
 
@@ -38,7 +42,7 @@ export class TweakComponent implements OnInit {
   isLoggedIn = false;
   statusText: string|undefined;
 
-  constructor(
+  constructor(public dialog: MatDialog,
       private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
   ngOnInit() {
@@ -81,19 +85,31 @@ export class TweakComponent implements OnInit {
   }
 
   async onResetAllClicked() {
-    // TODO: confirmation dialog
-    const tweakr = this.db.object(this.tweakrRoot);
-    tweakr.valueChanges()
-      .pipe(
-        filter(root => !!root),
-        first(),
-        flatMap((root: {}) =>
-          of(Object.keys(root).map(key =>
-            this.db.object(this.tweakrRoot + '/' + key).remove()
-          ))
-        ),
-        toArray()
-      )
-      .subscribe((items) => console.log('Deleted ', items));
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: {
+        title: 'Reset all Tweaks',
+        message: 'This will delete all Tweaks. You will need to close your app and open it again to restore them with the default values.',
+        action: 'Delete all'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if (!result) return;
+
+      const tweakr = this.db.object(this.tweakrRoot);
+      tweakr.valueChanges()
+        .pipe(
+          filter(root => !!root),
+          first(),
+          flatMap((root: {}) =>
+            of(Object.keys(root).map(key =>
+              this.db.object(this.tweakrRoot + '/' + key).remove()
+            ))
+          ),
+          toArray()
+        )
+        .subscribe((items) => console.log('Deleted ', items));
+    });
   }
 }
