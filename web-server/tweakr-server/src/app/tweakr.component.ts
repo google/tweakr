@@ -25,13 +25,22 @@ import { Tweak } from './Tweak';
 })
 export class TweakrComponent implements OnInit {
   @Input() tweakrRoot: string;
+  @Input() userKey: string;
 
   tweaks: Tweak[]|undefined;
 
   constructor(private db: AngularFireDatabase) {}
 
+  getRootKey() {
+    if (!this.userKey) return null;
+    return `${this.tweakrRoot}/${this.userKey}`
+  }
+
   ngOnInit() {
-    const tweakr = this.db.object(this.tweakrRoot);
+    const rootKey = this.getRootKey();
+    if (!rootKey) return;
+
+    const tweakr = this.db.object(rootKey);
     // TODO: unsubscribe from this on destroy.
     tweakr.valueChanges()
       .pipe(

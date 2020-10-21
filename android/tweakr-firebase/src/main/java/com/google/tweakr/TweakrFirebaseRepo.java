@@ -86,6 +86,16 @@ public class TweakrFirebaseRepo implements TweakrRepo {
         return TABLE_TWEAKR;
     }
 
+    /**
+     * Returns the user's sub-collection key. Use this if you want each user to be able to Tweak
+     * their own set of values, which will not change the other users' values.
+     *
+     * @return an alphanumeric identifier that is unique per user.
+     */
+    public CompletableFuture<String> getUserKey() {
+        return CompletableFuture.completedFuture("default");
+    }
+
     @Override
     public void addListener(OnChangeListener listener) {
         listeners.add(listener);
@@ -99,9 +109,10 @@ public class TweakrFirebaseRepo implements TweakrRepo {
     @Override
     public void add(String name, int targetId, ValueType valueType, Object initialValue) {
         authenticate()
-            .thenRun(() -> {
+            .thenCombine(getUserKey(), (isAuthed, key) -> key)
+            .thenAccept(subCollectionKey -> {
                 DatabaseReference doc = getDatabase()
-                        .getReference(getRootCollectionKey())
+                        .getReference(getRootCollectionKey() + "/" + subCollectionKey)
                         .child(name);
 
                 doc.child("type").setValue(valueType.getName());

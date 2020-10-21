@@ -6,7 +6,12 @@
       Reset all
     </button>
 </mat-toolbar>
+<nav mat-tab-nav-bar backgroundColor="primary">
+ <a mat-tab-link *ngFor="let user of userKeys"
+    (click)="selectedUserKey = user"
+     [active]="selectedUserKey == user"> {{user}} </a>
+</nav>
 
 <p *ngIf="statusText">{{statusText}}</p>
 
-<app-tweakr *ngIf="isLoggedIn" [tweakrRoot]="tweakrRoot"></app-tweakr>
+<app-tweakr *ngIf="isLoggedIn" [tweakrRoot]="tweakrRoot" [userKey]="selectedUserKey"></app-tweakr>

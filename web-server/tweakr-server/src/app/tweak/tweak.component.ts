@@ -39,6 +39,8 @@ const TWEAKR_ROOT = 'tweakr';
 })
 export class TweakComponent implements OnInit {
   tweakrRoot = TWEAKR_ROOT;
+  selectedUserKey: string|undefined;
+  userKeys: string[] = [];
   isLoggedIn = false;
   statusText: string|undefined;
 
@@ -56,7 +58,13 @@ export class TweakComponent implements OnInit {
         .valueChanges()
         .pipe(first())
         .subscribe(
-            () => {
+            (root) => {
+              console.log('root: ', root);
+              this.userKeys = root ? Object.keys(root) : [];
+              if (this.userKeys.length > 0) {
+                this.selectedUserKey = this.userKeys[0];
+              }
+
               this.isLoggedIn = true;
               this.statusText = undefined;
             },

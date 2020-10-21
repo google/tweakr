@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import {EditorsModule} from '../editors/editors.module';
 import {TweakrComponent} from '../tweakr.component';
@@ -31,7 +32,7 @@ import {getFirebaseConfig} from '../firebase_config';
     AngularFireAuthModule, AngularFireDatabaseModule,
     EditorsModule,
     MatButtonModule, MatCardModule, MatToolbarModule,
-    MatRadioModule, MatDialogModule
+    MatRadioModule, MatDialogModule, MatTabsModule
   ],
 })
 export class TweakModule { }
