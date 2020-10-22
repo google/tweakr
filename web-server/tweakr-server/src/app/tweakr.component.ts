@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { flatMap, filter, tap } from 'rxjs/operators';
 import { Tweak } from './Tweak';
 
@@ -23,11 +23,13 @@ import { Tweak } from './Tweak';
   templateUrl: './tweakr.component.html',
   styleUrls: ['./tweakr.component.scss']
 })
-export class TweakrComponent implements OnInit {
+export class TweakrComponent implements OnChanges, OnDestroy {
   @Input() tweakrRoot: string;
   @Input() userKey: string;
 
   tweaks: Tweak[]|undefined;
+
+  subscription?: Subscription;
 
   constructor(private db: AngularFireDatabase) {}
 
@@ -36,13 +38,15 @@ export class TweakrComponent implements OnInit {
     return `${this.tweakrRoot}/${this.userKey}`
   }
 
-  ngOnInit() {
+  async ngOnChanges() {
+    this.subscription?.unsubscribe();
+    this.tweaks = null;
+
     const rootKey = this.getRootKey();
     if (!rootKey) return;
 
     const tweakr = this.db.object(rootKey);
-    // TODO: unsubscribe from this on destroy.
-    tweakr.valueChanges()
+    this.subscription = tweakr.valueChanges()
       .pipe(
         tap(root => {
           // Clear all if it was deleted.
@@ -53,7 +57,7 @@ export class TweakrComponent implements OnInit {
         filter(root => !!root),
         flatMap((root: {}) =>
           of(Object.keys(root).map(key => new Tweak(key, root[key], (value: any) => {
-            this.db.object(this.tweakrRoot + '/' + key).update({value});
+            this.db.object(rootKey + '/' + key).update({value});
           })))
         )
       )
@@ -81,5 +85,9 @@ export class TweakrComponent implements OnInit {
           }
         }
       });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
   }
 }
