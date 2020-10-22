@@ -48,7 +48,6 @@ export class TweakComponent implements OnInit {
       private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
   ngOnInit() {
-    // TODO: add tabs to load different tweakr roots
     this.checkLoginStatus();
   }
 
@@ -81,6 +80,10 @@ export class TweakComponent implements OnInit {
           DEFAULT_EMAIL, DEFAULT_PASSWORD);
       this.isLoggedIn = (user != null);
       this.statusText = undefined;
+
+      if (this.isLoggedIn) {
+        this.checkLoginStatus();
+      }
     } catch (e) {
       this.isLoggedIn = false;
       this.statusText = `Error logging in: ${e}`;
