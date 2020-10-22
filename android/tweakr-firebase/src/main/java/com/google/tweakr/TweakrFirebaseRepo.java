@@ -34,7 +34,7 @@ import java.util.concurrent.CompletableFuture;
  * A TweakrRepo that uses Firebase to store and manipulate values with a Web UI.
  */
 public class TweakrFirebaseRepo implements TweakrRepo {
-    private static final String TAG = "TweakrRepo";
+    protected static final String TAG = "TweakrRepo";
 
     /**
      * The default key of the root-level collection.

@@ -29,9 +29,12 @@ public class Tweakr {
 
     private static TweakrRepo repo;
 
-    private static synchronized TweakrRepo getRepo() {
+    /**
+     * Returns the current repo used for this session.
+     */
+    public static synchronized TweakrRepo getRepo() {
         if (repo == null) {
-            throw new IllegalStateException("Must call TweakrRepo.setRepo() before registering.");
+            throw new IllegalStateException("Must call TweakrRepo.setRepo() first.");
         }
         return repo;
     }
