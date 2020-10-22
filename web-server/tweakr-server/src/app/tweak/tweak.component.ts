@@ -24,7 +24,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../dialogs/confirmation-dialog.component';
 import { UserPromptDialogComponent } from '../dialogs/user-prompt-dialog.component';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { first, flatMap, filter, toArray } from 'rxjs/operators';
 
 // You can use a default user here, or write something more complicated like
@@ -47,6 +47,10 @@ export class TweakComponent implements OnInit {
   isLoggedIn = false;
   statusText: string|undefined;
 
+  private subscription?: Subscription;
+
+  private hasPrompted = false;
+
   constructor(public dialog: MatDialog, private route: ActivatedRoute,
       private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
@@ -56,14 +60,15 @@ export class TweakComponent implements OnInit {
 
   checkLoginStatus() {
     this.statusText = 'Logging in...';
-    this.db.object(this.tweakrRoot)
+
+    this.subscription?.unsubscribe();
+    this.subscription = this.db.object(this.tweakrRoot)
         .valueChanges()
-        .pipe(first())
         .subscribe(
             (root) => {
               console.log('root: ', root);
               this.userKeys = root ? Object.keys(root) : [];
-              if (this.userKeys.length > 0) {
+              if (this.userKeys.length > 0 && this.selectedUserKey == undefined) {
                 this.selectedUserKey = this.userKeys[0];
               }
 
@@ -130,11 +135,14 @@ export class TweakComponent implements OnInit {
   }
 
   showPromptIfNeeded() {
+    if (this.hasPrompted) return;
     const params = this.route.snapshot.queryParamMap;
     if (params.get('promptForUserKey') == 'true') {
       const message = params.get('promptMessage');
 
       this.promptForUserKey(message);
+
+      this.hasPrompted = true;
     }
   }
 
