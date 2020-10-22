@@ -8,8 +8,10 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { TweakRoutingModule } from './tweak-routing.module';
 import { TweakComponent } from './tweak.component';
 
+import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -17,8 +19,6 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import {EditorsModule} from '../editors/editors.module';
 import {TweakrComponent} from '../tweakr.component';
-
-import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 import {getFirebaseConfig} from '../firebase_config';
 
@@ -31,8 +31,8 @@ import {getFirebaseConfig} from '../firebase_config';
     AngularFireModule.initializeApp(getFirebaseConfig()),
     AngularFireAuthModule, AngularFireDatabaseModule,
     EditorsModule,
-    MatButtonModule, MatCardModule, MatToolbarModule,
-    MatRadioModule, MatDialogModule, MatTabsModule
+    MatButtonModule, MatCardModule, MatToolbarModule, FormsModule,
+    MatRadioModule, MatDialogModule, MatTabsModule, MatInputModule
   ],
 })
 export class TweakModule { }

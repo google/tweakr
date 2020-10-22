@@ -13,13 +13,16 @@
 // limitations under the License.
 
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {auth} from 'firebase/app';
 
 import {MatDialog} from '@angular/material/dialog';
 
-import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogComponent } from '../dialogs/confirmation-dialog.component';
+import { UserPromptDialogComponent } from '../dialogs/user-prompt-dialog.component';
 
 import { Observable, of } from 'rxjs';
 import { first, flatMap, filter, toArray } from 'rxjs/operators';
@@ -44,7 +47,7 @@ export class TweakComponent implements OnInit {
   isLoggedIn = false;
   statusText: string|undefined;
 
-  constructor(public dialog: MatDialog,
+  constructor(public dialog: MatDialog, private route: ActivatedRoute,
       private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
   ngOnInit() {
@@ -66,6 +69,8 @@ export class TweakComponent implements OnInit {
 
               this.isLoggedIn = true;
               this.statusText = undefined;
+
+              this.showPromptIfNeeded();
             },
             (error: {}) => {
               console.log('Error', error);
@@ -121,6 +126,31 @@ export class TweakComponent implements OnInit {
           toArray()
         )
         .subscribe((items) => console.log('Deleted ', items));
+    });
+  }
+
+  showPromptIfNeeded() {
+    const params = this.route.snapshot.queryParamMap;
+    if (params.get('promptForUserKey') == 'true') {
+      const message = params.get('promptMessage');
+
+      this.promptForUserKey(message);
+    }
+  }
+
+  promptForUserKey(message: string|undefined) {
+    const dialogRef = this.dialog.open(UserPromptDialogComponent, {
+      data: {
+        message
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+
+      if (result && this.userKeys.includes(result)) {
+        this.selectedUserKey = result;
+      }
     });
   }
 }
