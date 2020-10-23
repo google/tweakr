@@ -39,7 +39,7 @@ public class TweakrFirebaseRepo implements TweakrRepo {
     /**
      * The default key of the root-level collection.
      */
-    private static final String TABLE_TWEAKR = "tweakr";
+    private static final String TABLE_TWEAKR = "tweakr_v2";
 
     // TODO: unregister these at some point
     private final Map<String, ValueEventListener> snapshotListeners = new HashMap<>();

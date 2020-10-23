@@ -33,7 +33,7 @@ import { first, flatMap, filter, toArray } from 'rxjs/operators';
 const DEFAULT_EMAIL = 'YOUR_EMAIL@DOMAIN.com';
 const DEFAULT_PASSWORD = 'YOUR PASSWORD HERE';
 
-const TWEAKR_ROOT = 'tweakr';
+const TWEAKR_ROOT = 'tweakr_v2';
 
 @Component({
   selector: 'app-tweak',
