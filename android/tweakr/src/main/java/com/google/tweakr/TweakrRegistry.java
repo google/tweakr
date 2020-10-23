@@ -174,7 +174,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
             Log.e(TAG, "Failed to get field's current value", e);
             curValue = valueType.getDefault();
         }
-        repo.add(name, currentTargetId, valueType, curValue);
+        repo.add(name, currentTargetId, valueType, curValue, TweakMetadata.fromAnnotation(annotation));
     }
 
     private ValueType getCustomValueType(Tweak annotation) {
@@ -225,7 +225,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
             }
         }
 
-        repo.add(name, currentTargetId, valueType, curValue);
+        repo.add(name, currentTargetId, valueType, curValue, TweakMetadata.fromAnnotation(annotation));
     }
 
     private Method findGetter(Object target, Method setter) {

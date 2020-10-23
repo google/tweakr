@@ -70,4 +70,9 @@ public @interface Tweak {
      *
      */
     Class<? extends ValueType> valueType() default ValueType.class;
+
+    /**
+     * A description to display in the Tweakr UI.
+     */
+    String description() default "";
 }

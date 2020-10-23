@@ -107,7 +107,7 @@ public class TweakrFirebaseRepo implements TweakrRepo {
     }
 
     @Override
-    public void add(String name, int targetId, ValueType valueType, Object initialValue) {
+    public void add(String name, int targetId, ValueType valueType, Object initialValue, TweakMetadata tweakMetadata) {
         authenticate()
             .thenCombine(getUserKey(), (isAuthed, key) -> key)
             .thenAccept(subCollectionKey -> {
@@ -117,6 +117,7 @@ public class TweakrFirebaseRepo implements TweakrRepo {
 
                 doc.child("type").setValue(valueType.getName());
                 doc.child("initialValue").setValue(initialValue);
+                doc.child("metadata").setValue(tweakMetadata);
                 List<String> possibleValues = valueType.getPossibleValues();
                 if (possibleValues != null) {
                     doc.child("possibleValues").setValue(possibleValues);

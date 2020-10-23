@@ -21,10 +21,15 @@ import com.google.tweakr.types.VoidValueType;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.verify;
 
 /**
@@ -64,7 +69,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(String.class);
-        verify(repo).add("testField", 1, valueType, TEST_STRING);
+        verify(repo).add(eq("testField"), eq( 1), eq(valueType), eq(TEST_STRING),
+            any());
     }
 
     @Test
@@ -77,7 +83,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(int.class);
-        verify(repo).add("testField", 1, valueType, TEST_INT);
+        verify(repo).add(eq("testField"), eq(1), eq(valueType), eq(TEST_INT),
+            any());
     }
 
     @Test
@@ -90,7 +97,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(Float.class);
-        verify(repo).add("testField", 1, valueType, TEST_FLOAT);
+        verify(repo).add(eq("testField"), eq(1), eq(valueType), eq(TEST_FLOAT),
+            any());
     }
 
     @Test
@@ -103,7 +111,7 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(boolean.class);
-        verify(repo).add("testField", 1, valueType, true);
+        verify(repo).add(eq("testField"), eq(1), eq(valueType), eq(true), any());
     }
 
     @Test
@@ -116,7 +124,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(TestEnum.class);
-        verify(repo).add("testField", 1, valueType, TestEnum.SOMETHING_ELSE);
+        verify(repo).add(eq("testField"), eq(1), eq(valueType), eq(TestEnum.SOMETHING_ELSE),
+            any());
     }
 
     @Test
@@ -135,7 +144,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(String.class);
-        verify(repo).add("setTest", 1, valueType, TEST_STRING);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TEST_STRING),
+            any());
     }
 
     @Test
@@ -154,7 +164,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(int.class);
-        verify(repo).add("setTest", 1, valueType, TEST_INT);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TEST_INT),
+            any());
     }
 
     @Test
@@ -173,7 +184,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(Float.class);
-        verify(repo).add("setTest", 1, valueType, TEST_FLOAT);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TEST_FLOAT),
+            any());
     }
 
     @Test
@@ -192,7 +204,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(TestEnum.class);
-        verify(repo).add("setTest", 1, valueType, TestEnum.SOMETHING_ELSE);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TestEnum.SOMETHING_ELSE),
+            any());
     }
 
     @Test
@@ -207,7 +220,27 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new VoidValueType();
-        verify(repo).add("setTest", 1, valueType, null);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), isNull(), any());
+    }
+
+    @Test
+    public void findsGetter() {
+        Object testObject = new Object() {
+            @Tweak
+            public void setTest(String p) {
+
+            }
+
+            public String getTest() {
+                return TEST_STRING;
+            }
+        };
+
+        registry.register(testObject, null);
+
+        ValueType valueType = new DefaultValueTypeConverter().getType(String.class);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TEST_STRING),
+            any());
     }
 
     @Test
@@ -226,7 +259,8 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(String.class);
-        verify(repo).add("setTest", 1, valueType, TEST_STRING);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(TEST_STRING),
+            any());
     }
 
     @Test
@@ -245,6 +279,23 @@ public class TweakrRegistryTest {
         registry.register(testObject, null);
 
         ValueType valueType = new DefaultValueTypeConverter().getType(boolean.class);
-        verify(repo).add("setTest", 1, valueType, true);
+        verify(repo).add(eq("setTest"), eq(1), eq(valueType), eq(true), any());
+    }
+
+    @Test
+    public void tweakDescription() {
+        Object testObject = new Object() {
+            @Tweak(description = "Test description")
+            public Boolean testField = true;
+        };
+
+        registry.register(testObject, null);
+
+        ValueType valueType = new DefaultValueTypeConverter().getType(boolean.class);
+        ArgumentCaptor<TweakMetadata> captor = ArgumentCaptor.forClass(TweakMetadata.class);
+
+        verify(repo).add(eq("testField"), eq(1), eq(valueType), eq(true), captor.capture());
+
+        assertEquals("Test description", captor.getValue().getDescription());
     }
 }

@@ -45,13 +45,13 @@ public interface TweakrRepo {
 
     /**
      * Add a new Tweak.
-     *
-     * @param name fully-qualified name of the tweak: may be a path of parent objects to the actual
+     *  @param name fully-qualified name of the tweak: may be a path of parent objects to the actual
      *             field's name, separated by {@link #FIELD_SEPARATOR}.
      * @param targetId monotonically increasing ID of the target object.
      * @param valueType ValueType for converting the UI value before passing it to
-     *                  {@link OnChangeListener#onFieldChanged}.
+ *                  {@link OnChangeListener#onFieldChanged}.
      * @param initialValue Initial value of the field as it exists in the target object.
+     * @param tweakMetadata Metadata from the annotation for the UI to display.
      */
-    void add(String name, int targetId, ValueType valueType, Object initialValue);
+    void add(String name, int targetId, ValueType valueType, Object initialValue, TweakMetadata tweakMetadata);
 }

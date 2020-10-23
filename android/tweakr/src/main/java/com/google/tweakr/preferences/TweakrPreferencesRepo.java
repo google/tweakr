@@ -30,6 +30,8 @@ import androidx.preference.SwitchPreference;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 
+import com.google.tweakr.TextUtils;
+import com.google.tweakr.TweakMetadata;
 import com.google.tweakr.TweakrRepo;
 import com.google.tweakr.types.EnumValueType;
 import com.google.tweakr.types.PrimitiveValueType;
@@ -54,6 +56,7 @@ public class TweakrPreferencesRepo implements TweakrRepo {
     private static final String METADATA_PREFS_FIELD_INITIALVALUE = "METADATA_PREFS_FIELD_INITIALVALUE";
     private static final String METADATA_PREFS_FIELD_ALL_NAMES = "METADATA_PREFS_FIELD_ALL_NAMES";
     private static final String METADATA_PREFS_FIELD_POSSIBLE_VALUES = "METADATA_PREFS_FIELD_POSSIBLE_VALUES";
+    private static final String METADATA_PREFS_FIELD_DESCRIPTION = "METADATA_PREFS_FIELD_DESCRIPTION";
 
     private final Context context;
     private final SharedPreferences prefs;
@@ -110,7 +113,7 @@ public class TweakrPreferencesRepo implements TweakrRepo {
     }
 
     @Override
-    public void add(String name, int targetId, ValueType valueType, Object initialValue) {
+    public void add(String name, int targetId, ValueType valueType, Object initialValue, TweakMetadata tweakMetadata) {
         Set<String> set = metadataPrefs.getStringSet(METADATA_PREFS_FIELD_ALL_NAMES, new ArraySet<>());
 
         set.add(name);
@@ -122,6 +125,7 @@ public class TweakrPreferencesRepo implements TweakrRepo {
                 .putString(name + METADATA_PREFS_FIELD_VALUETYPE, valueType.getName())
                 .putString(name + METADATA_PREFS_FIELD_INITIALVALUE, initialValue == null ? null : initialValue.toString())
                 .putStringSet(name + METADATA_PREFS_FIELD_POSSIBLE_VALUES, new ArraySet<>(valueType.getPossibleValues()))
+                .putString(name + METADATA_PREFS_FIELD_DESCRIPTION, tweakMetadata.getDescription())
                 .putStringSet(METADATA_PREFS_FIELD_ALL_NAMES, set)
                 .apply();
 
@@ -144,6 +148,7 @@ public class TweakrPreferencesRepo implements TweakrRepo {
             int targetId = metadataPrefs.getInt(name + METADATA_PREFS_FIELD_TARGET_ID, -1);
             String valueType = metadataPrefs.getString(name + METADATA_PREFS_FIELD_VALUETYPE, null);
             String initialValue = metadataPrefs.getString(name + METADATA_PREFS_FIELD_INITIALVALUE, null);
+            String description = metadataPrefs.getString(name + METADATA_PREFS_FIELD_DESCRIPTION, null);
             Set<String> possibleValues = metadataPrefs.getStringSet(name + METADATA_PREFS_FIELD_POSSIBLE_VALUES, new ArraySet<>());
 
             try {
@@ -151,6 +156,9 @@ public class TweakrPreferencesRepo implements TweakrRepo {
 
                 pref.setKey(name);
                 pref.setTitle(name);
+                if (!TextUtils.isEmpty(description)) {
+                    pref.setSummary(description);
+                }
 
                 if (!screen.addPreference(pref)) {
                     Log.e(TAG, "Failed to add preference for " + name);
