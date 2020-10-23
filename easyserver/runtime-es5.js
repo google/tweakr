@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"default~setup-setup-module~tweak-tweak-module":"default~setup-setup-module~tweak-tweak-module","setup-setup-module":"setup-setup-module","tweak-tweak-module":"tweak-tweak-module","firebase-auth":"firebase-auth"}[chunkId]||chunkId) +    "-es5.js"
+/******/ 		return __webpack_require__.p + "" + ({"setup-setup-module":"setup-setup-module","tweak-tweak-module":"tweak-tweak-module","firebase-auth":"firebase-auth"}[chunkId]||chunkId) +    "-es5.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
