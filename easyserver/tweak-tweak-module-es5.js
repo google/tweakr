@@ -28799,7 +28799,7 @@
 
       var DEFAULT_EMAIL = 'YOUR_EMAIL@DOMAIN.com';
       var DEFAULT_PASSWORD = 'YOUR PASSWORD HERE';
-      var TWEAKR_ROOT = 'tweakr';
+      var TWEAKR_ROOT = 'tweakr_v2';
 
       var TweakComponent = /*#__PURE__*/function () {
         function TweakComponent(dialog, route, afAuth, db) {

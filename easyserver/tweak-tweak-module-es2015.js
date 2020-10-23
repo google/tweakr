@@ -21523,7 +21523,7 @@ function TweakComponent_app_tweakr_9_Template(rf, ctx) { if (rf & 1) {
 // authentication, you will need to enable it in the Android app as well.
 const DEFAULT_EMAIL = 'YOUR_EMAIL@DOMAIN.com';
 const DEFAULT_PASSWORD = 'YOUR PASSWORD HERE';
-const TWEAKR_ROOT = 'tweakr';
+const TWEAKR_ROOT = 'tweakr_v2';
 class TweakComponent {
     constructor(dialog, route, afAuth, db) {
         this.dialog = dialog;
