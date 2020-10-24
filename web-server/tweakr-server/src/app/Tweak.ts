@@ -20,6 +20,7 @@ export class Tweak {
   possibleValues: string[] | undefined;
   value: number;
   type: string;
+  description?: string;
   min: number;
   max: number;
 
@@ -44,6 +45,7 @@ export class Tweak {
     this.initialValue = data.initialValue;
     this.possibleValues = data.possibleValues;
     this.type = data.type;
+    this.description = data.metadata?.description;
     if (this.min === undefined) {
       this.calculateMin(this.initialValue);
     }
