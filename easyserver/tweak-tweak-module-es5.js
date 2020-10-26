@@ -24956,7 +24956,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("(", tweak_r2.type, ")");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"]("", tweak_r2.description, " (", tweak_r2.type, ")");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
@@ -25129,7 +25129,7 @@
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](0, TweakrComponent_mat_card_0_Template, 4, 0, "mat-card", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TweakrComponent_mat_card_1_Template, 17, 9, "mat-card", 1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, TweakrComponent_mat_card_1_Template, 17, 10, "mat-card", 1);
           }
 
           if (rf & 2) {
@@ -25309,13 +25309,13 @@
         factory: function TweakModule_Factory(t) {
           return new (t || TweakModule)();
         },
-        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_17__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"]]]
+        imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_17__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](TweakModule, {
           declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_16__["TweakrComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"]]
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"], _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]]
         });
       })();
       /*@__PURE__*/
@@ -25326,7 +25326,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
           args: [{
             declarations: [_tweak_component__WEBPACK_IMPORTED_MODULE_6__["TweakComponent"], _tweakr_component__WEBPACK_IMPORTED_MODULE_16__["TweakrComponent"]],
-            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_17__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"]]
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _tweak_routing_module__WEBPACK_IMPORTED_MODULE_5__["TweakRoutingModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_2__["AngularFireModule"].initializeApp(Object(_firebase_config__WEBPACK_IMPORTED_MODULE_17__["getFirebaseConfig"])()), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuthModule"], _angular_fire_database__WEBPACK_IMPORTED_MODULE_4__["AngularFireDatabaseModule"], _editors_editors_module__WEBPACK_IMPORTED_MODULE_15__["EditorsModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_11__["MatToolbarModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_13__["MatDialogModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_14__["MatTabsModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_10__["MatInputModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["ReactiveFormsModule"]]
           }]
         }], null, null);
       })();
@@ -25397,9 +25397,12 @@
         _createClass(Tweak, [{
           key: "set",
           value: function set(data) {
+            var _a;
+
             this.initialValue = data.initialValue;
             this.possibleValues = data.possibleValues;
             this.type = data.type;
+            this.description = (_a = data.metadata) === null || _a === void 0 ? void 0 : _a.description;
 
             if (this.min === undefined) {
               this.calculateMin(this.initialValue);
@@ -28939,6 +28942,13 @@
         }, {
           key: "showPromptIfNeeded",
           value: function showPromptIfNeeded() {
+            var _a; // If dialog is already open, refresh the list of valid codes.
+
+
+            if (this.userKeyDialogRef && ((_a = this.userKeyDialogRef.componentInstance) === null || _a === void 0 ? void 0 : _a.data)) {
+              this.userKeyDialogRef.componentInstance.data.validCodes = this.userKeys;
+            }
+
             if (this.hasPrompted) return;
             var params = this.route.snapshot.queryParamMap;
 
@@ -28953,17 +28963,21 @@
           value: function promptForUserKey(message) {
             var _this12 = this;
 
-            var dialogRef = this.dialog.open(_dialogs_user_prompt_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UserPromptDialogComponent"], {
+            this.userKeyDialogRef = this.dialog.open(_dialogs_user_prompt_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UserPromptDialogComponent"], {
+              disableClose: true,
               data: {
-                message: message
+                message: message,
+                validCodes: this.userKeys
               }
             });
-            dialogRef.afterClosed().subscribe(function (result) {
+            this.userKeyDialogRef.afterClosed().subscribe(function (result) {
               console.log("Dialog result: ".concat(result));
 
               if (result && _this12.userKeys.includes(result)) {
                 _this12.selectedUserKey = result;
               }
+
+              _this12.userKeyDialogRef = null;
             });
           }
         }]);
