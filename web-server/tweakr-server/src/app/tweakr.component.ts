@@ -29,7 +29,7 @@ export class TweakrComponent implements OnChanges, OnDestroy {
 
   tweaks: Tweak[]|undefined;
 
-  subscription?: Subscription;
+  private subscription?: Subscription;
 
   constructor(private db: AngularFireDatabase) {}
 

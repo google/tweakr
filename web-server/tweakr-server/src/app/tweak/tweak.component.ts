@@ -19,7 +19,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {auth} from 'firebase/app';
 
-import {MatDialog} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 import { ConfirmationDialogComponent } from '../dialogs/confirmation-dialog.component';
 import { UserPromptDialogComponent } from '../dialogs/user-prompt-dialog.component';
@@ -50,6 +50,8 @@ export class TweakComponent implements OnInit {
   private subscription?: Subscription;
 
   private hasPrompted = false;
+
+  private userKeyDialogRef?: MatDialogRef<UserPromptDialogComponent>;
 
   constructor(public dialog: MatDialog, private route: ActivatedRoute,
       private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
@@ -135,6 +137,10 @@ export class TweakComponent implements OnInit {
   }
 
   showPromptIfNeeded() {
+    // If dialog is already open, refresh the list of valid codes.
+    if (this.userKeyDialogRef && this.userKeyDialogRef.componentInstance?.data) {
+      this.userKeyDialogRef.componentInstance.data.validCodes = this.userKeys;
+    }
     if (this.hasPrompted) return;
     const params = this.route.snapshot.queryParamMap;
     if (params.get('promptForUserKey') == 'true') {
@@ -147,18 +153,22 @@ export class TweakComponent implements OnInit {
   }
 
   promptForUserKey(message: string|undefined) {
-    const dialogRef = this.dialog.open(UserPromptDialogComponent, {
+    this.userKeyDialogRef = this.dialog.open(UserPromptDialogComponent, {
+      disableClose: true,
       data: {
-        message
+        message,
+        validCodes: this.userKeys
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    this.userKeyDialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
 
       if (result && this.userKeys.includes(result)) {
         this.selectedUserKey = result;
       }
+
+      this.userKeyDialogRef = null;
     });
   }
 }
