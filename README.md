@@ -8,7 +8,7 @@ Sick of tweaking one value in your animation and having to wait minutes to compi
 
 Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements locally or remotely. It can use Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. It can also autogenerate a Preferences UI local to the phone. Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
 
-[![](http://img.youtube.com/vi/CgeW_q7NgfI/0.jpg)](http://www.youtube.com/watch?v=CgeW_q7NgfI "Tweakr Demo Video")
+[![](images/tweakr-teaser-short.gif)](http://www.youtube.com/watch?v=CgeW_q7NgfI "Tweakr Demo Video")
 
 [Demo video](https://youtu.be/CgeW_q7NgfI)
 
