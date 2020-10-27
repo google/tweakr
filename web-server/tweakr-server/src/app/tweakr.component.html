@@ -8,7 +8,7 @@
 
 <mat-card *ngFor="let tweak of tweaks" class='tweak'>
   <mat-card-title><span class='tweak-name-part' *ngFor="let part of tweak.id.split(':')"> {{part}} </span></mat-card-title>
-  <mat-card-subtitle>{{tweak.description}} ({{tweak.type}})</mat-card-subtitle>
+  <mat-card-subtitle>{{tweak.metadata?.description}} ({{tweak.type}})</mat-card-subtitle>
 
   <mat-card-content>
     <div [ngSwitch]='tweak.type'>
