@@ -24956,7 +24956,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"]("", tweak_r2.description, " (", tweak_r2.type, ")");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate2"]("", tweak_r2.metadata == null ? null : tweak_r2.metadata.description, " (", tweak_r2.type, ")");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
@@ -25397,12 +25397,10 @@
         _createClass(Tweak, [{
           key: "set",
           value: function set(data) {
-            var _a;
-
             this.initialValue = data.initialValue;
             this.possibleValues = data.possibleValues;
             this.type = data.type;
-            this.description = (_a = data.metadata) === null || _a === void 0 ? void 0 : _a.description;
+            this.metadata = data.metadata;
 
             if (this.min === undefined) {
               this.calculateMin(this.initialValue);
