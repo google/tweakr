@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { BooleanComponent } from './boolean.component';
 
@@ -30,6 +31,7 @@ describe('BooleanComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BooleanComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('boolean');
     fixture.detectChanges();
   });
 

@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { ColorComponent } from './color.component';
 
@@ -30,6 +31,7 @@ describe('ColorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ColorComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('color');
     fixture.detectChanges();
   });
 

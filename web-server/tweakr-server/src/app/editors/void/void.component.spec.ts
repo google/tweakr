@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { VoidComponent } from './void.component';
 
@@ -30,6 +31,7 @@ describe('VoidComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(VoidComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('void');
     fixture.detectChanges();
   });
 

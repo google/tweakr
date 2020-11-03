@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { StringComponent } from './string.component';
 
@@ -30,6 +31,7 @@ describe('StringComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(StringComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('string');
     fixture.detectChanges();
   });
 

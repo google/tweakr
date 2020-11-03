@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { FloatComponent } from './float.component';
 
@@ -30,6 +31,7 @@ describe('FloatComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FloatComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('float');
     fixture.detectChanges();
   });
 
