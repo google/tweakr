@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { EditorComponent } from './editor.component';
 
@@ -30,10 +31,15 @@ describe('EditorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EditorComponent);
     component = fixture.componentInstance;
+    component.tweak = createTestTweak('float');
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('name should split', () => {
+    expect(component.getName()).toBe('Tweak');
   });
 });
