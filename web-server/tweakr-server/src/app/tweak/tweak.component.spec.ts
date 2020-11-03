@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { TweakComponent } from './tweak.component';
 
@@ -8,7 +11,11 @@ describe('TweakComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TweakComponent ]
+      declarations: [ TweakComponent ],
+      imports: [ MatDialogModule, RouterTestingModule ],
+      providers: [
+       { provide: MAT_DIALOG_DATA, useValue: {} }
+     ],
     })
     .compileComponents();
   });
