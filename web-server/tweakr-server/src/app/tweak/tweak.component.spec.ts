@@ -22,4 +22,9 @@ describe('TweakComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in the nav', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-toolbar').textContent).toContain('Tweakr');
+  });
 });
