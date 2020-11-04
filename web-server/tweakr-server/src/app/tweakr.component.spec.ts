@@ -15,13 +15,22 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { TweakrComponent } from './tweakr.component';
 
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireDatabase} from '@angular/fire/database';
+
+import {AngularFireAuthMock, mockAngularFireDatabase} from './testing/angularfire-utils';
+
 describe('TweakrComponent', () => {
   let component: TweakrComponent;
   let fixture: ComponentFixture<TweakrComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TweakrComponent ]
+      declarations: [ TweakrComponent ],
+      providers: [
+       { provide: AngularFireDatabase, useValue: mockAngularFireDatabase(null)},
+       { provide: AngularFireAuth, useValue: AngularFireAuthMock}
+     ],
     })
     .compileComponents();
   });
