@@ -1,9 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { HarnessLoader } from "@angular/cdk/testing";
+import { TestbedHarnessEnvironment } from "@angular/cdk/testing/testbed";
+import { TestBed, async, ComponentFixture } from "@angular/core/testing";
+import { MatFormFieldHarness } from "@angular/material/form-field/testing";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatSelectModule } from "@angular/material/select";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonHarness } from "@angular/material/button/testing";
+import { MatInputHarness } from "@angular/material/input/testing";
 
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { SetupComponent } from './setup.component';
+
+let loader: HarnessLoader;
 
 describe('SetupComponent', () => {
   let component: SetupComponent;
@@ -12,7 +27,15 @@ describe('SetupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SetupComponent ],
-      imports: [ MatDialogModule, RouterTestingModule ],
+      imports: [ MatDialogModule, RouterTestingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatCardModule,
+        MatButtonModule,
+        MatInputModule,
+        NoopAnimationsModule, ],
       providers: [
        { provide: MAT_DIALOG_DATA, useValue: {} }
      ],
@@ -24,9 +47,58 @@ describe('SetupComponent', () => {
     fixture = TestBed.createComponent(SetupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    component.ngOnInit();
+    fixture.detectChanges();
+
+    loader = TestbedHarnessEnvironment.loader(fixture);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render title in the nav', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-toolbar').textContent).toContain('Tweakr');
+  });
+
+  it('entering invalid API config should show error', async () => {
+    const textarea = await loader.getHarness(MatInputHarness);
+    const form = await loader.getHarness(MatFormFieldHarness);
+
+    expect(textarea).toBeTruthy();
+    expect(form).toBeTruthy();
+
+    await textarea.setValue(`apiKey: 'YOUR_INFO_HERE',`);
+    fixture.detectChanges();
+
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('mat-error').textContent).toContain('Invalid');
+
+    expect((await form.getTextErrors())[0]).toContain('Invalid');
+  });
+
+  it('entering API config should render link', async () => {
+    const textarea = await loader.getHarness(MatInputHarness);
+    const form = await loader.getHarness(MatFormFieldHarness);
+
+    expect(textarea).toBeTruthy();
+    expect(form).toBeTruthy();
+
+    await textarea.setValue(`{
+      apiKey: 'YOUR_INFO_HERE',
+      authDomain: 'YOUR_INFO_HERE',
+      databaseURL: 'YOUR_INFO_HERE',
+      projectId: 'YOUR_INFO_HERE',
+      storageBucket: 'YOUR_INFO_HERE',
+      messagingSenderId: 'YOUR_INFO_HERE'
+    }`);
+    fixture.detectChanges();
+
+    expect((await form.getTextErrors()).length).toBe(0);
+
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a').href).toContain('YOUR_INFO_HERE');
+    expect(compiled.querySelector('a').href).toContain('databaseURL');
   });
 });
