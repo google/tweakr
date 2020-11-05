@@ -4,7 +4,7 @@ Tweakr
 *A Library for Remote Debugging, Autogenerating Settings/Preference UIs, and Wizard-of-Ozing*
 by [odbol](http://odbol.com)
 
-Sick of tweaking one value in your animation and having to wait minutes to compile and see your change? Ever want to hand someone a prototype, and let them try it with various options you can adjust on the fly? Do you get tingles when someone mentions "one-line solution"? Then Tweakr might be the right framework for you!
+Sick of tweaking one value in your animation and having to wait minutes to compile and see your change? Ever want to hand someone a prototype, and let them try it with various options you can adjust on the fly? Do you get tingles when someone mentions "one-line solution"? Then Tweakr might be right for you!
 
 Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements locally or remotely. It can use Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. It can also autogenerate a Preferences UI local to the phone. Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
 
@@ -172,11 +172,11 @@ Feature Roadmap / TODO
 
 - Fix buttons to not run on initial register.
 - Support explicit min/max value setting in @Tweak annotation.
+- Support Tweak groups
 - Support multiple children in @Tweak annotation
 - Support array types
 - Support registering additional ValueTypeConverters
 - Binary file ValueType for uploading images/audio remotely and displaying in your app
-- Write some tests, or something ;-P
 
 
 Notes
