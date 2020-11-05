@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {createTestTweak} from 'src/app/testing/Tweak';
+import {createTestTweak} from 'src/app/testing/model-utils';
 
 import { VoidComponent } from './void.component';
 
