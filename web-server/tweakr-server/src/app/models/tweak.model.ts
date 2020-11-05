@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+export class TweakMetadata {
+  description?: string;
+}
+
 /**
  * Main data model for a Tweakable parameter.
  */
@@ -20,7 +24,7 @@ export class Tweak {
   possibleValues: string[] | undefined;
   value: number;
   type: string;
-  metadata?: {};
+  metadata?: TweakMetadata;
   min: number;
   max: number;
 
@@ -46,7 +50,10 @@ export class Tweak {
     this.possibleValues = data.possibleValues;
     this.type = data.type;
 
-    this.metadata = data.metadata;
+    this.metadata = {
+      ...this.metadata,
+      ...data.metadata
+    };
 
     if (this.min === undefined) {
       this.calculateMin(this.initialValue);
