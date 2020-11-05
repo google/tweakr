@@ -1,22 +1,11 @@
-import { RouterTestingModule } from '@angular/router/testing';
-
 import { HarnessLoader } from "@angular/cdk/testing";
 import { TestbedHarnessEnvironment } from "@angular/cdk/testing/testbed";
 import { TestBed, async, ComponentFixture } from "@angular/core/testing";
 import { MatFormFieldHarness } from "@angular/material/form-field/testing";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { MatSelectModule } from "@angular/material/select";
-import { MatCardModule } from "@angular/material/card";
-import { MatButtonModule } from "@angular/material/button";
-import { MatInputModule } from "@angular/material/input";
-import { NoopAnimationsModule } from "@angular/platform-browser/animations";
-import { MatButtonHarness } from "@angular/material/button/testing";
 import { MatInputHarness } from "@angular/material/input/testing";
 
-import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
 import { SetupComponent } from './setup.component';
+import {configureTestingModule} from '../testing/testing-utils';
 
 let loader: HarnessLoader;
 
@@ -25,20 +14,8 @@ describe('SetupComponent', () => {
   let fixture: ComponentFixture<SetupComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    await configureTestingModule({
       declarations: [ SetupComponent ],
-      imports: [ MatDialogModule, RouterTestingModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatCardModule,
-        MatButtonModule,
-        MatInputModule,
-        NoopAnimationsModule, ],
-      providers: [
-       { provide: MAT_DIALOG_DATA, useValue: {} }
-     ],
     })
     .compileComponents();
   });
