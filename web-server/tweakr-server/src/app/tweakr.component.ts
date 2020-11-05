@@ -16,7 +16,7 @@ import { Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable, of, Subscription } from 'rxjs';
 import { flatMap, filter, tap } from 'rxjs/operators';
-import { Tweak } from './Tweak';
+import { Tweak } from './models/Tweak';
 
 @Component({
   selector: 'app-tweakr',

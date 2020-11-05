@@ -1,4 +1,4 @@
-import {Tweak} from '../Tweak';
+import {Tweak} from '../models/Tweak';
 
 export function createTestTweakFloat(id?: string, data?: {}, onChangeListener?: (value: any) => void): Tweak {
   return createTestTweak('float', id, data, onChangeListener);
