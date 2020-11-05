@@ -18,6 +18,10 @@ import { Observable, of, Subscription } from 'rxjs';
 import { flatMap, filter, tap } from 'rxjs/operators';
 import { Tweak } from './models/tweak.model';
 
+/**
+ * Loads all Tweaks from a Firebase database with the given tweakrRoot and
+ * userKey, and renders editors for each one.
+ */
 @Component({
   selector: 'app-tweakr',
   templateUrl: './tweakr.component.html',

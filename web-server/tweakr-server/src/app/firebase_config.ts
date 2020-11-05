@@ -1,6 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
 import {environment} from '../environments/environment';
 
+/**
+ * Returns the value of the given query param.
+ */
 function getParam(paramKey: string): string {
   const re = new RegExp(paramKey + '=([^&]+)', 'i');
   const keyMatches = re.exec(window.location.href);
@@ -11,6 +14,11 @@ function getParam(paramKey: string): string {
   return null;
 }
 
+/**
+ * Loads the Firebase config from either the URL query params or the environment
+ * variables. This allows Easyserver to dynamically load Firebase configs from
+ * the URL, instead of having to set up your own server environment.
+ */
 export function getFirebaseConfig(route?: ActivatedRoute): any {
   const config = getParam('firebase');
   if (config) {
