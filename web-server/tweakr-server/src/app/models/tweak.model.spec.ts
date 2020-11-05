@@ -4,9 +4,10 @@ import {Tweak} from './tweak.model';
 describe('Tweak Model', () => {
 
   it('should create', () => {
-    const tweak = createTestTweak('float');
+    const tweak = createTestTweak('float', 'Test:Tweaky');
     expect(tweak).toBeTruthy();
     expect(tweak.type).toBe('float');
+    expect(tweak.id).toBe('Test:Tweaky');
   });
 
   it('set should not update value', () => {
