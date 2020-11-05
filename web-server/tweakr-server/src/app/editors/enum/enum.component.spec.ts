@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { EnumComponent } from './enum.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('EnumComponent', () => {
   let component: EnumComponent;
   let fixture: ComponentFixture<EnumComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ EnumComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EnumComponent);

@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { StringComponent } from './string.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('StringComponent', () => {
   let component: StringComponent;
   let fixture: ComponentFixture<StringComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ StringComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StringComponent);

@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { FloatComponent } from './float.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('FloatComponent', () => {
   let component: FloatComponent;
   let fixture: ComponentFixture<FloatComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ FloatComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FloatComponent);

@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { EditorComponent } from './editor.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('EditorComponent', () => {
   let component: EditorComponent;
   let fixture: ComponentFixture<EditorComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ EditorComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EditorComponent);

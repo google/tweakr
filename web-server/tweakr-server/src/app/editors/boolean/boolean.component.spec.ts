@@ -17,12 +17,15 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { BooleanComponent } from './boolean.component';
 
+
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('BooleanComponent', () => {
   let component: BooleanComponent;
   let fixture: ComponentFixture<BooleanComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async(async () => {
+    await configureTestingModule({
       declarations: [ BooleanComponent ]
     })
     .compileComponents();

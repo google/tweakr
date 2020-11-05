@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { ColorComponent } from './color.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('ColorComponent', () => {
   let component: ColorComponent;
   let fixture: ComponentFixture<ColorComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ ColorComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ColorComponent);

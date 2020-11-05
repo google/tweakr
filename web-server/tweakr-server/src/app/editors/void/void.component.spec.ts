@@ -17,16 +17,18 @@ import {createTestTweak} from 'src/app/testing/Tweak';
 
 import { VoidComponent } from './void.component';
 
+import {configureTestingModule} from '../../testing/testing-utils';
+
 describe('VoidComponent', () => {
   let component: VoidComponent;
   let fixture: ComponentFixture<VoidComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await configureTestingModule({
       declarations: [ VoidComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(VoidComponent);

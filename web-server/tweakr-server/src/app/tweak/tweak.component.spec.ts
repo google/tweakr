@@ -3,6 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+import {configureTestingModule} from '../testing/testing-utils';
+
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireDatabase} from '@angular/fire/database';
 
@@ -14,7 +16,7 @@ describe('TweakComponent', () => {
   let fixture: ComponentFixture<TweakComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    await configureTestingModule({
       declarations: [ TweakComponent ],
       imports: [ MatDialogModule, RouterTestingModule ],
       providers: [
