@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import { Component, OnInit, Input } from '@angular/core';
-import { Tweak } from '../../models/Tweak';
+import { Tweak } from '../../models/tweak.model';
 
 @Component({
   selector: 'editors-editor',
