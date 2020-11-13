@@ -59,6 +59,8 @@ Set up Firebase – Android
 Android App
 -----------
 
+If you are using your own existing app, first import the [Tweakr AAR files](https://github.com/google/tweakr/releases/) into [your Android Studio project](https://developer.android.com/studio/projects/android-library#AddDependency). Make sure your applicationId matches the one you created in the Firebase console.
+
 1. Open the `android-sample` project.
 2. Open the `app/build.gradle` file and change the `applicationId` to the package name you used to set up Firebase, e.g.: `com.[your-domain].tweakr.sample`
 3. Run the app.
