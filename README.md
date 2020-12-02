@@ -20,7 +20,7 @@ First, clone the repo: `git clone https://github.com/google/tweakr.git`.
 
 By default, the Sample app is set up to use the Local Preferences repo. For Firebase support, see the next section.
 
-1. Expose an Activity like the TweakrPrefrencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
+1. Expose an Activity like the TweakrPreferencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
 2. You must run the main Activity first before any of the Tweaks will show up in the Preferences UI. After that, they will persist between launches.
 
 
