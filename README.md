@@ -174,6 +174,8 @@ Feature Roadmap / TODO
 
 - Fix buttons to not run on initial register.
 - Support explicit min/max value setting in @Tweak annotation.
+- Support custom ordering of Tweaks.
+- Add ability to save/load custom Tweak settings, like presets, or the ability to export / import Tweak values as a JSON file.
 - Support Tweak groups
 - Support multiple children in @Tweak annotation
 - Support array types
