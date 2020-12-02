@@ -106,6 +106,10 @@
       var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../environments/environment */
       "AytR");
+      /**
+       * Returns the value of the given query param.
+       */
+
 
       function getParam(paramKey) {
         var re = new RegExp(paramKey + '=([^&]+)', 'i');
@@ -117,6 +121,12 @@
 
         return null;
       }
+      /**
+       * Loads the Firebase config from either the URL query params or the environment
+       * variables. This allows Easyserver to dynamically load Firebase configs from
+       * the URL, instead of having to set up your own server environment.
+       */
+
 
       function getFirebaseConfig(route) {
         var config = getParam('firebase');

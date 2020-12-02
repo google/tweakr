@@ -73,6 +73,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getFirebaseConfig", function() { return getFirebaseConfig; });
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../environments/environment */ "AytR");
 
+/**
+ * Returns the value of the given query param.
+ */
 function getParam(paramKey) {
     const re = new RegExp(paramKey + '=([^&]+)', 'i');
     const keyMatches = re.exec(window.location.href);
@@ -81,6 +84,11 @@ function getParam(paramKey) {
     }
     return null;
 }
+/**
+ * Loads the Firebase config from either the URL query params or the environment
+ * variables. This allows Easyserver to dynamically load Firebase configs from
+ * the URL, instead of having to set up your own server environment.
+ */
 function getFirebaseConfig(route) {
     const config = getParam('firebase');
     if (config) {
