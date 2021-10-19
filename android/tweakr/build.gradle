@@ -1,3 +1,6 @@
+plugins {
+    id 'maven-publish'
+}
 apply plugin: 'com.android.library'
 
 android {
@@ -37,4 +40,30 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.23.4'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.google.tweakr'
+                artifactId = 'core'
+                version = '2.2.0'
+            }
+//            // Creates a Maven publication called “debug”.
+//            debug(MavenPublication) {
+//                // Applies the component for the debug build variant.
+//                from components.debug
+//
+//                groupId = 'com.example.MyLibrary'
+//                artifactId = 'final-debug'
+//                version = '1.0'
+//            }
+        }
+    }
 }
