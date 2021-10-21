@@ -6,32 +6,86 @@ by [odbol](http://odbol.com)
 
 Sick of tweaking one value in your animation and having to wait minutes to compile and see your change? Ever want to hand someone a prototype, and let them try it with various options you can adjust on the fly? Do you get tingles when someone mentions "one-line solution"? Then Tweakr might be right for you!
 
-Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements locally or remotely. It can use Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. It can also autogenerate a Preferences UI screen using SharedPreferences local to the phone. Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
+Tweakr is an Android library that lets you annotate fields and methods in your code, and then automatically generates a UI to change those elements locally or remotely. It can use Firebase and a web-based UI to alter values and change settings in your app on the fly, instantly. It can also autogenerate a Preferences UI screen using SharedPreferences local to the phone.
+
+Literally write one line of code: just annotate the thing you want to change with @Tweak, and it will handle the rest!
 
 [![](images/tweakr-teaser-short.gif)](http://www.youtube.com/watch?v=CgeW_q7NgfI "Tweakr Demo Video")
 
 [Demo video](https://youtu.be/CgeW_q7NgfI)
 
 
+Include in your build
+=====================
+
+[![](https://jitpack.io/v/google/tweakr.svg)](https://jitpack.io/#google/tweakr)
+
+1. Add Jitpack to your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+2. Add the Tweakr dependency to your app module's build.gradle file.
+```
+	dependencies {
+    // Required for local SharedPreferences or Firebase
+    implementation 'com.github.google.tweakr:core:2.2.1'
+
+    // Optional: Include this if you want Firebase support.
+    implementation 'com.github.google.tweakr:firebase:2.2.1'
+	}
+```
+
+
 Quickstart Instructions (Local SharedPreferences Repo)
 =====================
 
-First, clone the repo: `git clone https://github.com/google/tweakr.git`.
+1. Initialize the Tweakr repo in your Application onCreate():
+```
+public class SampleApplication extends Application {
 
-By default, the Sample app is set up to use the Local Preferences repo. For Firebase support, see the next section.
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-1. Expose an Activity like the TweakrPreferencesActivity that will auto-generate a PreferenceScreen UI for your Tweaks.
-2. You must run the main Activity first before any of the Tweaks will show up in the Preferences UI. After that, they will persist between launches.
+        // Enable local Android preference screen for Tweakr.
+        Tweakr.setRepo(new TweakrPreferencesRepo(this));
+    }
+}
+```
+2. Annotate a field or method of your class with `@Tweak`. (It must be public).
+3. Call `Tweakr.register(this)` in the class's constructor so that it will register all the annotated fields with the Tweakr repo and begin listening for changes.
+4. Expose an Activity like the [TweakrPreferencesActivity](https://github.com/google/tweakr/blob/master/android-sample/app/src/main/java/com/google/tweakr/sample/preferences/TweakrPreferencesActivity.java) that will auto-generate a PreferenceScreen UI for your Tweaks.
+5. You must run the main Activity first before any of the Tweaks will show up in the Preferences UI. After that, they will persist between launches.
 
 
 Quickstart Instructions (Firebase)
 =======================
 
-Import Firebase module
-----------------------
+1. Initialize the Tweakr repo with TweakrFirebaseRepo in your Application onCreate():
+```
+public class SampleApplication extends Application {
 
-1. Search the Sample Android app project for `FIREBASE SUPPORT` and uncomment the lines indicated.
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // Uses the default no-auth Firebase Repo.
+        Tweakr.setRepo(new TweakrFirebaseRepo());
 
+        // Or, copy this class from the sample app to enable email authentication (default is anonymous/no authentication).
+        // Tweakr.setRepo(new TweakrFirebaseRepoEmailAuth());
+    }
+}
+```
+2. Annotate a field or method of your class with `@Tweak`. (It must be public).
+3. Call `Tweakr.register(this)` in the class's constructor so that it will register all the annotated fields with the Tweakr repo and begin listening for changes.
+5. Use our free hosted [Easyserver](#web---easyserver) to tweak your parameters via a remote web UI (or [use your own server](#custom-server-setup)).
+5. You must run the main Activity first before any of the Tweaks will show up in the web UI. After that, they will persist between launches and update the latest values from the server automatically.
+4. (Optional): you may increase the security of your app by [enabling authentication](#enabling-authentication).
 
 Set up Firebase – Android
 -------------------------
@@ -40,8 +94,8 @@ Set up Firebase – Android
 1. In the Firebase console, add a new Android app using your own package name:
 	e.g. `com.[your-domain].tweakr.sample`
 1. Follow the instructions to download the "google-services.json" file.
-1. Copy the "google-services.json" file into the `android-sample/app/` directory.
-1. You may skip the gradle file step since those libraries are already added to the Sample app.
+1. Copy the "google-services.json" file into your app module directory (e.g. in the sample: `android-sample/app/`).
+1. Add the Firebase dependencies to your gradle file as directed.
 1. Skip confirming the connection to Firebase. We'll do that later once we update the applicationId in the Android app.
 1. In the Firebase console, click "Develop->Database", and scroll down to create a new "Real-Time database". (**NOT** a Cloud Firestore database!)
 1. Set up [Firebase Authentication](https://firebase.google.com/docs/database/security/quickstart#sample-rules). The quickest way is to allow full public access:
@@ -56,15 +110,16 @@ Set up Firebase – Android
 }
 ````
 
-Android App
+Running the Sample Android App
 -----------
 
-If you are using your own existing app, first import the [Tweakr AAR files](https://github.com/google/tweakr/releases/) into [your Android Studio project](https://developer.android.com/studio/projects/android-library#AddDependency). Make sure your applicationId matches the one you created in the Firebase console. Otherwise, follow these directions to try the sample app:
+Make sure your applicationId matches the one you created in the Firebase console.
+
+Follow these directions to try the sample app:
 
 1. Open the `android-sample` project.
 2. Open the `app/build.gradle` file and change the `applicationId` to the package name you used to set up Firebase, e.g.: `com.[your-domain].tweakr.sample`
 3. Run the app.
-4. (Optional): you may increase the security of your app by [enabling authentication](#enabling-authentication).
 
 
 Web - Easyserver
@@ -75,6 +130,7 @@ The easiest way to start tweaking values in your app is to use our pre-hosted we
 _Note: If you are using authentication to increase the security of your app, this method is not recommended._
 
 1. Go to [https://google.github.io/tweakr/easyserver/](https://google.github.io/tweakr/easyserver/)  and follow the instructions to allow the Easyserver to access your Firebase.
+We never store any of your information, but keep in mind to use this you need to open your Firebase to the public so do so at your own risk.
 
 
 Custom Server Setup
