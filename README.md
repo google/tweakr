@@ -22,27 +22,30 @@ Include in your build
 
 1. Add Jitpack to your root build.gradle at the end of repositories:
 ```
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
 ```
-2. Add the Tweakr dependency to your app module's build.gradle file.
+2. Add the Tweakr dependency to your app module's build.gradle file:
 ```
-	dependencies {
-    // Required for local SharedPreferences or Firebase
-    implementation 'com.github.google.tweakr:core:2.2.1'
+dependencies {
+  // Required for local SharedPreferences or Firebase
+  implementation 'com.github.google.tweakr:core:2.2.1'
 
-    // Optional: Include this if you want Firebase support.
-    implementation 'com.github.google.tweakr:firebase:2.2.1'
-	}
+  // Optional: Include this if you want Firebase support.
+  implementation 'com.github.google.tweakr:firebase:2.2.1'
+}
 ```
 
 
 Quickstart Instructions (Local SharedPreferences Repo)
 =====================
+
+This autogenerates a PreferenceFragment settings UI with all your Tweaks so you can easily change them locally in your
+app via a settings screen.
 
 1. Initialize the Tweakr repo in your Application onCreate():
 ```
@@ -58,6 +61,13 @@ public class SampleApplication extends Application {
 }
 ```
 2. Annotate a field or method of your class with `@Tweak`. (It must be public).
+```
+  @Tweak
+  public float radius = 50;
+
+  @Tweak
+  public void setTextShown(boolean showText) {
+```
 3. Call `Tweakr.register(this)` in the class's constructor so that it will register all the annotated fields with the Tweakr repo and begin listening for changes.
 4. Expose an Activity like the [TweakrPreferencesActivity](https://github.com/google/tweakr/blob/master/android-sample/app/src/main/java/com/google/tweakr/sample/preferences/TweakrPreferencesActivity.java) that will auto-generate a PreferenceScreen UI for your Tweaks.
 5. You must run the main Activity first before any of the Tweaks will show up in the Preferences UI. After that, they will persist between launches.
@@ -65,6 +75,8 @@ public class SampleApplication extends Application {
 
 Quickstart Instructions (Firebase)
 =======================
+
+This allows you to remote control your Tweaks via a web UI. Requires Firebase.
 
 1. Initialize the Tweakr repo with TweakrFirebaseRepo in your Application onCreate():
 ```
@@ -75,13 +87,17 @@ public class SampleApplication extends Application {
         super.onCreate();
         // Uses the default no-auth Firebase Repo.
         Tweakr.setRepo(new TweakrFirebaseRepo());
-
-        // Or, copy this class from the sample app to enable email authentication (default is anonymous/no authentication).
-        // Tweakr.setRepo(new TweakrFirebaseRepoEmailAuth());
     }
 }
 ```
 2. Annotate a field or method of your class with `@Tweak`. (It must be public).
+```
+  @Tweak
+  public float radius = 50;
+
+  @Tweak
+  public void setTextShown(boolean showText) {
+```
 3. Call `Tweakr.register(this)` in the class's constructor so that it will register all the annotated fields with the Tweakr repo and begin listening for changes.
 5. Use our free hosted [Easyserver](#web---easyserver) to tweak your parameters via a remote web UI (or [use your own server](#custom-server-setup)).
 5. You must run the main Activity first before any of the Tweaks will show up in the web UI. After that, they will persist between launches and update the latest values from the server automatically.
