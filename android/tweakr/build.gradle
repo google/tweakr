@@ -53,7 +53,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.google.tweakr'
                 artifactId = 'core'
-                version = '2.2.0'
+                version = '2.2.2'
             }
 //            // Creates a Maven publication called “debug”.
 //            debug(MavenPublication) {
