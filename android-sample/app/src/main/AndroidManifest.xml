@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
+            android:exported="true"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,7 @@
         <activity
             android:name=".preferences.TweakrPreferencesActivity"
             android:label="@string/title_activity_tweakr_preferences"
+            android:exported="true"
             android:launchMode="singleInstance">
 
 

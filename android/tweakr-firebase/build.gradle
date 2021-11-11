@@ -4,13 +4,13 @@ plugins {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 31
 
 
 
     defaultConfig {
         minSdkVersion 24
-        targetSdkVersion 29
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -43,7 +43,7 @@ dependencies {
 
     api project(':tweakr')
 //    api 'com.google.firebase:firebase-core:16.0.8'
-    api 'com.google.firebase:firebase-database:19.3.0'
+    api 'com.google.firebase:firebase-database:20.0.2'
     //api 'com.google.firebase:firebase-auth:19.3.1'
 }
 
