@@ -114,8 +114,10 @@ public class TweakrPreferencesRepo implements TweakrRepo {
 
     @Override
     public void add(String name, int targetId, ValueType valueType, Object initialValue, TweakMetadata tweakMetadata) {
-        Set<String> set = metadataPrefs.getStringSet(METADATA_PREFS_FIELD_ALL_NAMES, new ArraySet<>());
+        Set<String> preferencesSet =
+            metadataPrefs.getStringSet(METADATA_PREFS_FIELD_ALL_NAMES, new ArraySet<>());
 
+        Set<String> set = new ArraySet<>(preferencesSet);
         set.add(name);
 
         valueTypes.put(name, valueType);
