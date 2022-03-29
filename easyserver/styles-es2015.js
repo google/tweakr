@@ -58,8 +58,8 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/* You can add global styles to this fi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/fuego/AndroidStudioProjects/tweakr/web-server/tweakr-server/node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css */"tNt0");
-module.exports = __webpack_require__(/*! /Users/fuego/AndroidStudioProjects/tweakr/web-server/tweakr-server/src/styles.scss */"+EN/");
+__webpack_require__(/*! /Users/fuego/Documents/development/tweakr/web-server/tweakr-server/node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css */"tNt0");
+module.exports = __webpack_require__(/*! /Users/fuego/Documents/development/tweakr/web-server/tweakr-server/src/styles.scss */"+EN/");
 
 
 /***/ }),

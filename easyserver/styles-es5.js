@@ -87,11 +87,11 @@
     /***/
     function _(module, exports, __webpack_require__) {
       __webpack_require__(
-      /*! /Users/fuego/AndroidStudioProjects/tweakr/web-server/tweakr-server/node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css */
+      /*! /Users/fuego/Documents/development/tweakr/web-server/tweakr-server/node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css */
       "tNt0");
 
       module.exports = __webpack_require__(
-      /*! /Users/fuego/AndroidStudioProjects/tweakr/web-server/tweakr-server/src/styles.scss */
+      /*! /Users/fuego/Documents/development/tweakr/web-server/tweakr-server/src/styles.scss */
       "+EN/");
       /***/
     },

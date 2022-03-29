@@ -531,12 +531,6 @@ class Tweak {
         this.id = id;
         this.onChangeListener = onChangeListener;
         console.log('new Tweak ' + id, data);
-        if (data.value === undefined) {
-            this.value = data.initialValue;
-        }
-        else {
-            this.value = data.value;
-        }
         this.set(data);
     }
     /**
@@ -549,6 +543,14 @@ class Tweak {
         this.possibleValues = data.possibleValues;
         this.type = data.type;
         this.metadata = Object.assign(Object.assign({}, this.metadata), data.metadata);
+        if (this.value === undefined) {
+            if (data.value === undefined) {
+                this.value = data.initialValue;
+            }
+            else {
+                this.value = data.value;
+            }
+        }
         if (this.min === undefined) {
             this.calculateMin(this.initialValue);
         }

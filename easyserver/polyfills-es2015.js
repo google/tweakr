@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/fuego/AndroidStudioProjects/tweakr/web-server/tweakr-server/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/fuego/Documents/development/tweakr/web-server/tweakr-server/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
