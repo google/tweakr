@@ -29,16 +29,16 @@ import com.google.tweakr.types.ColorValueType;
 public class CircleView extends View implements TweakrRepo.OnChangeListener {
 
     @Tweak
-    public float centerX = 180;
+    private float centerX = 180;
 
     @Tweak
-    public float centerY = 180;
+    private float centerY = 180;
 
     @Tweak
-    public float radius = 50;
+    protected float radius = 50;
 
     @Tweak
-    public Paint.Style style = Paint.Style.FILL;
+    Paint.Style style = Paint.Style.FILL;
 
     @Tweak(valueType = ColorValueType.class)
     public int color = Color.GREEN;

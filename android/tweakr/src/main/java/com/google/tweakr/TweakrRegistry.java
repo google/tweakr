@@ -132,16 +132,14 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
 
         Method[] methods = target.getClass().getMethods();
         for (Method method : methods) {
-            if ((method.getModifiers() & Modifier.PUBLIC) != 0) {
-                if (childName.equals(method.getName())) {
-                    if (paramName == null) {
-                        return method;
-                    } else {
-                        Class<?>[] parameterTypes = method.getParameterTypes();
-                        if (parameterTypes.length == 1) {
-                            if (paramName.equals(parameterTypes[0].getSimpleName())) {
-                                return method;
-                            }
+            if (childName.equals(method.getName())) {
+                if (paramName == null) {
+                    return method;
+                } else {
+                    Class<?>[] parameterTypes = method.getParameterTypes();
+                    if (parameterTypes.length == 1) {
+                        if (paramName.equals(parameterTypes[0].getSimpleName())) {
+                            return method;
                         }
                     }
                 }
@@ -153,13 +151,11 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
 
     private Field getChildField(Object target, String fieldName) throws NoSuchFieldException, IllegalAccessException {
         Field field = target.getClass().getField(fieldName);
-        if ((field.getModifiers() & Modifier.PUBLIC) == 0) {
-            throw new IllegalAccessException();
-        }
         return field;
     }
 
     private void registerField(Object target, Field field, String name, Tweak annotation) {
+        field.setAccessible(true);
         fields.add(name, target, field);
 
         // Register with firebase.
@@ -204,6 +200,7 @@ class TweakrRegistry implements TweakrRepo.OnChangeListener {
     }
 
     private void registerMethod(Object target, Method method, String name, Tweak annotation) {
+        method.setAccessible(true);
         methods.add(name, target, method);
 
         // Register with firebase.
