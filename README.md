@@ -33,10 +33,10 @@ allprojects {
 ```
 dependencies {
   // Required for local SharedPreferences or Firebase
-  implementation 'com.github.google.tweakr:core:2.2.2'
+  implementation 'com.github.google.tweakr:core:2.2.3'
 
   // Optional: Include this if you want Firebase support.
-  implementation 'com.github.google.tweakr:firebase:2.2.2'
+  implementation 'com.github.google.tweakr:firebase:2.2.3'
 }
 ```
 
