@@ -22,7 +22,7 @@ export class TweakMetadata {
 export class Tweak {
   initialValue: number;
   possibleValues: string[] | undefined;
-  value: number;
+  value: number | undefined;
   type: string;
   metadata?: TweakMetadata;
   min: number;
@@ -30,12 +30,6 @@ export class Tweak {
 
   constructor(public readonly id: string, data: any, private onChangeListener: (value: any) => void) {
     console.log('new Tweak ' + id, data);
-
-    if (data.value === undefined) {
-      this.value = data.initialValue;
-    } else {
-      this.value = data.value;
-    }
 
     this.set(data);
   }
@@ -54,6 +48,14 @@ export class Tweak {
       ...this.metadata,
       ...data.metadata
     };
+
+    if (this.value === undefined) {
+      if (data.value === undefined) {
+        this.value = data.initialValue;
+      } else {
+        this.value = data.value;
+      }
+    }
 
     if (this.min === undefined) {
       this.calculateMin(this.initialValue);
