@@ -187,23 +187,6 @@ Tweakr's API is (hopefully) simple:
 - See the Javadoc in the source for more detailed documentation.
 
 
-Kotlin Support
---------------
-
-Tweakr generally works on Kotlin as well, with some minor changes:
-
-- When annotating a `var` property, you must use `@set:Tweak` so that Kotlin annotates the setter method and not the private field (Tweakr can't see private fields).
-
-e.g.:
-
-```
-class Example {
-  @set:Tweak
-  var containerFadeStartRatio = 0.25f
-}
-```
-
-
 Enabling Authentication
 =======================
 
