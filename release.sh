@@ -15,3 +15,6 @@ cp ../android/tweakr/build/outputs/aar/tweakr-release.aar ../dist/
 cp ../android/tweakr-firebase/build/outputs/aar/tweakr-firebase-release.aar ../dist/
 
 popd
+
+echo "Generating documentation..."
+/Applications/Doxygen.app/Contents/Resources/doxygen doxygen.config

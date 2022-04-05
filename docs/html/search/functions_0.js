@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['add_0',['add',['../classcom_1_1google_1_1tweakr_1_1_tweakr_firebase_repo.html#a296b11725ef6bdddb9aa33d04d6d70ab',1,'com.google.tweakr.TweakrFirebaseRepo.add()'],['../classcom_1_1google_1_1tweakr_1_1preferences_1_1_tweakr_preferences_repo.html#a0a0d43a779868dc97e86c2bee913dcdc',1,'com.google.tweakr.preferences.TweakrPreferencesRepo.add()'],['../interfacecom_1_1google_1_1tweakr_1_1_tweakr_repo.html#a0c4ec2e6343bcacff105605f6b1d8eab',1,'com.google.tweakr.TweakrRepo.add()']]],
+  ['addlistener_1',['addListener',['../classcom_1_1google_1_1tweakr_1_1_tweakr_firebase_repo.html#a9a3ec51e747730a24b3d765d3b562e18',1,'com.google.tweakr.TweakrFirebaseRepo.addListener()'],['../classcom_1_1google_1_1tweakr_1_1preferences_1_1_tweakr_preferences_repo.html#a75426ff5b56a467ba7ccd0c07cf3a59a',1,'com.google.tweakr.preferences.TweakrPreferencesRepo.addListener()'],['../classcom_1_1google_1_1tweakr_1_1_tweakr.html#ac3e1e194671e41cf976c741767fce30a',1,'com.google.tweakr.Tweakr.addListener()'],['../interfacecom_1_1google_1_1tweakr_1_1_tweakr_repo.html#a9e223b285980f5e99806ea030873c1e5',1,'com.google.tweakr.TweakrRepo.addListener()']]],
+  ['authenticate_2',['authenticate',['../classcom_1_1google_1_1tweakr_1_1_tweakr_firebase_repo.html#a4a03930746edee4a6a67708497a396b0',1,'com::google::tweakr::TweakrFirebaseRepo']]]
+];
