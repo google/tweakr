@@ -184,7 +184,11 @@ Tweakr's API is (hopefully) simple:
 - Most primitives are supported automatically. If you want to tweak custom types, either write a custom ValueType (see `ColorValueType.java` for an example), or create a method that does what you want and then annotate the method.
 - You may also tweak child members of an object (in case you don't have access to the object's class). See `MainActivity.introText` in the sample app for an example.
 - You may call `Tweakr.addListener()` to be notified when your object's values have been modified. See `CircleView.java` in the sample for an example.
-- See the Javadoc in the source for more detailed documentation.
+
+Documentation
+=============
+
+See [Tweakr's class documentation](https://google.github.io/tweakr/docs/html/classcom_1_1google_1_1tweakr_1_1_tweakr.html) for full usage info.
 
 
 Enabling Authentication
