@@ -14,6 +14,8 @@
 
 package com.google.tweakr;
 
+import java.util.Locale;
+
 public class TextUtils {
 
     public static boolean isEmpty(String targetPrefix) {
@@ -21,9 +23,10 @@ public class TextUtils {
     }
 
     public static String decapitalize(String capitalized) {
+        Locale locale = Locale.getDefault();
         if (capitalized.length() < 2) {
-            return capitalized.toLowerCase();
+            return capitalized.toLowerCase(locale);
         }
-        return capitalized.substring(0, 1).toLowerCase() + capitalized.substring(1);
+        return capitalized.substring(0, 1).toLowerCase(locale) + capitalized.substring(1);
     }
 }
