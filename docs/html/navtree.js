@@ -114,7 +114,7 @@ function createIndent(o,domNode,node,level)
     var imgNode = document.createElement("span");
     imgNode.className = 'arrow';
     imgNode.style.paddingLeft=(16*level).toString()+'px';
-    imgNode.innerHTML=arrowRight;
+    imgNode.textContent=arrowRight;
     node.plus_img = imgNode;
     node.expandToggle = document.createElement("a");
     node.expandToggle.href = "javascript:void(0)";
