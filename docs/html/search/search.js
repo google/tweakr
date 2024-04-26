@@ -248,7 +248,7 @@ function SearchBox(name, resultsPath, label, extension)
         var node = child.firstChild;
         if (j==id)
         {
-          node.innerHTML='&#8226;';
+          node.textContent='&#8226;';
         }
         else
         {
